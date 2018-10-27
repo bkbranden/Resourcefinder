@@ -1,0 +1,1 @@
+web: gunicorn absurdvacations.wsgi --log-file -
