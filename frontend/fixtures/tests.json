@@ -3,9 +3,9 @@
         "model": "frontend.location",
         "pk": 1,
         "fields": {
-            "location_name": "Clemons",
-            "maximum_capacity": 100,
-            "current_occupancy": 10
+            "location_name": "Test Library",
+            "maximum_capacity": 50,
+            "current_occupancy": 0
         }
     },
     {

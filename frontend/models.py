@@ -44,4 +44,3 @@ class Location(models.Model):
 		self.current_occupancy -= 1
 		if(self.current_occupancy < 0):
 			self.current_occupancy = 0
-
