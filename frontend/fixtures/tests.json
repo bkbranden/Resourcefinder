@@ -1,20 +1,22 @@
 [
     {
-        "model": "frontend.location",
+        "model": "frontend.student",
         "pk": 1,
         "fields": {
-            "location_name": "Test Library",
-            "maximum_capacity": 50,
-            "current_occupancy": 0
+            "student_name": "Dude 1",
+            "enter_time": "2018-02-14 00:00:00",
+            "student_computing_id": "dj2def",
+            "student_location": "alderman"
         }
     },
     {
-        "model": "frontend.location",
+        "model": "frontend.student",
         "pk": 2,
         "fields": {
-            "location_name": "Alderman",
-            "maximum_capacity": 100,
-            "current_occupancy": 15
+            "student_name": "Dude 2",
+            "enter_time": "2018-02-14 00:00:00",
+            "student_computing_id": "ok3ff",
+            "student_location": "clark"
         }
     }
 ]
