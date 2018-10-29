@@ -43,5 +43,9 @@ class Location(models.Model):
 	def check_out(self):
 		self.current_occupancy -= 1
 		if(self.current_occupancy < 0):
+<<<<<<< HEAD
 			self.current_occupancy = 0
 
+=======
+			self.current_occupancy = 0
+>>>>>>> aaf302d5078a68c90ddaab8e72d60990fda7a682
