@@ -1,0 +1,20 @@
+[
+    {
+        "model": "frontend.location",
+        "pk": 1,
+        "fields": {
+            "location_name": "Clemons",
+            "maximum_capacity": 100,
+            "current_occupancy": 10
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 2,
+        "fields": {
+            "location_name": "Alderman",
+            "maximum_capacity": 100,
+            "current_occupancy": 15
+        }
+    }
+]
