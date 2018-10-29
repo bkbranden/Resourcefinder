@@ -8,7 +8,7 @@ from .views import *
 #Tests if client can access the site
 class TestAccess(TestCase):
     def test_checkin_is_loaded(self):
-        response = self.client.get('/')
+        response = self.client.get('')
         self.assertEqual(response.status_code, 200)
 
 #Tests if client can access .../view_map/

@@ -4,4 +4,5 @@ python:
 install:
   - pip install -r requirements-travis.txt
 script:
+- python manage.py collectstatic
 - python manage.py test 
