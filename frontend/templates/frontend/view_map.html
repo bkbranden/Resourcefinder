@@ -15,10 +15,6 @@
 
 <style>
 .marker {
-    background-image: url('mapbox-icon.png');
-    background-size: cover;
-    width: 50px;
-    height: 50px;
     display: block;
     border: none;
     border-radius: 50%;
@@ -28,25 +24,27 @@
 </style>
 
 <div id='map'></div>
-
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA';
 var geojson = {
     "type": "FeatureCollection",
     "features": [
         {
-            "type": "Feature",      //clem
+            "type": "Feature",
             "properties": {
                 "message": "Foo",
                 "iconSize": [60, 60]
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-78.5059886, 38.0363712]
+                "coordinates": [
+                    -78.5059886,
+                    38.0363712
+                ]
             }
         },
         {
-            "type": "Feature",      //alderman
+            "type": "Feature",
             "properties": {
                 "message": "Bar",
                 "iconSize": [50, 50]
@@ -60,7 +58,7 @@ var geojson = {
             }
         },
         {
-            "type": "Feature",      //clark
+            "type": "Feature",
             "properties": {
                 "message": "Baz",
                 "iconSize": [40, 40]
@@ -75,33 +73,39 @@ var geojson = {
         }
     ]
 };
+
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-        center: [-78.5064, 38.0348],
-        zoom: 16
+    center: [-78.5064, 38.0348],
+    zoom: 16
 });
-var img = new Image();
-img.src = 'mapbox-icon.png';
+
 // add markers to map
 geojson.features.forEach(function(marker) {
     // create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker';
+    el.style.backgroundImage = 'url("../../static/frontend/images/mapbox-icon.png')';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
+
     el.addEventListener('click', function() {
         window.alert(marker.properties.message);
     });
+
     // add marker to map
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
 });
+
 // Add geolocate control to the map.
 map.addControl(new mapboxgl.GeolocateControl({
-    positionOptions: {
-        enableHighAccuracy: true
-    },
-    trackUserLocation: true
+   positionOptions: {
+       enableHighAccuracy: true
+   },
+   trackUserLocation: true
 }));
 </script>
 
