@@ -14,15 +14,12 @@ def view_map(request):
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
     return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token })
 
-def viewusers(request):
+   
+
+def posttest(request):
+    username = request.POST.get("username")
+    pwd= request.POST.get("password")
+    sendData = Student(student_name = username, pwds =pwd)
+    sendData.save()
     students = Student.objects.all()
     return render(request, 'frontend/viewusers.html', {'students': students})
-
-# def get_user(request):
-#     if (request.method == "POST"):
-#         temp = request.POST.get("username", "")
-#         # student_instance = Student.objects.update_or_create(student_name = request.POST['username'])
-#         # student_instance.save()
-#         # return HttpResponseRedirect("frontend/viewusers.html")
-#     return HttpResponse(temp)
-#     # return render(request, 'frontend/viewusers.html')
