@@ -63,17 +63,12 @@ class TestCheckingMembers(TestCase):
 		self.assertEqual(s.student_location, '')
 		self.assertEqual(l.current_occupancy, 1)
 
-
-##class CheckForCredentials(TestCase):
-##    def setUp(self):
-##	#Do things
-##
-##    def test_check_for_credentials(self):
-##	#Do more things
-##
-##
-##
-
+###Tests login
+##class TestStudentLogin(TestCase):
+##    #Test if student has credentials, then direct them to page
+##    #Test if student has incorrect credentials, then prompt that login fields are incorrect or prompt to create an account
+##    #Test if user tries to login while already logged in, prompt with invalid credentials
+##    #Test that user cannot check in if not logged in
 
 
 
