@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,20 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
     <style>
         body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; z-index: -1; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
+
+        <a href="https://icons8.com">Icon pack by Icons8</a>
 </head>
 <body>
 
 <style>
 .marker {
     display: block;
-    /* border: none;
-    border-radius: 50%; */
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
     padding: 0;
-    /* border-image-slice: 20; */
 }
 </style>
 
@@ -86,10 +88,9 @@ geojson.features.forEach(function(marker) {
     // create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker';
-    el.style.backgroundImage = 'url(../../static/frontend/images/mapbox-icon.png)';
-    el.style.width = '1000px';
-    el.style.height = '50px';
-    el.style.zIndex = "100";
+    el.style.backgroundImage = 'url("https://img.icons8.com/color/50/000000/library.png")';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
 
     el.addEventListener('click', function() {
         window.alert(marker.properties.message);
