@@ -1,23 +1,24 @@
 import React from "react";
 
-class Square extends React.Component {
-    render() {
+function Square(props){
       return (
-        <button className="square">
-          {this.props.value}
+        <button className="square"
+         onClick={props.onClick}>
+          {props.value}
         </button>
       );
-    }
   }
   
 class Board extends React.Component {
+
+    
     renderSquare(i) {
-      return <Square value={i}/>;
+      return (<Square value={this.props.squares[i]} onClick= {() => this.props.onClick(i) }/>);
     }
   
     render() {
-      const status = 'Next player: X';
-  
+     
+
       return (
         <div>
           <div className="status">{status}</div>
@@ -40,6 +41,7 @@ class Board extends React.Component {
       );
     }
 }
+
 
 export default Board;
 

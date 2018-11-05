@@ -1,16 +1,17 @@
 import datetime
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
 
-class Student(models.Model):
+class Student(AbstractUser):
         student_name = models.CharField(max_length=200)
         enter_time = models.DateTimeField(null = True)
         student_computing_id = models.CharField(max_length=200)
         student_location = models.CharField(max_length=200, default='')
-        pwds = models.CharField(max_length=50, null = True)
+        password = models.CharField(max_length=50, null = True)
         def __str__(self):
                 return self.student_name
 
