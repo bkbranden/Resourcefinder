@@ -7,9 +7,10 @@ from django.utils import timezone
 
 class Student(models.Model):
         student_name = models.CharField(max_length=200)
-        enter_time = models.DateTimeField()
+        enter_time = models.DateTimeField(null = True)
         student_computing_id = models.CharField(max_length=200)
         student_location = models.CharField(max_length=200, default='')
+        pwds = models.CharField(max_length=50, null = True)
         def __str__(self):
                 return self.student_name
 
@@ -43,9 +44,4 @@ class Location(models.Model):
 	def check_out(self):
 		self.current_occupancy -= 1
 		if(self.current_occupancy < 0):
-<<<<<<< HEAD
 			self.current_occupancy = 0
-
-=======
-			self.current_occupancy = 0
->>>>>>> aaf302d5078a68c90ddaab8e72d60990fda7a682

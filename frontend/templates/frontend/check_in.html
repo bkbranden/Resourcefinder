@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-<<<<<<< HEAD
-
-    </head>
-    <body>
-        <ul>
-            {% for location in locations %}
-            <li> {{location.location_name }} </li>
-            {% endfor %} 
-        </ul>
-=======
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -30,7 +20,7 @@
                             <div class="shape6"></div>
                             <div class="shape7"></div>
                             <div class="float">
-                                <form class="form" action="/viewusers/">
+                                <form class="form" action="/viewusers/" method="post">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <label for="username" class="text-white">Username:</label><br>
@@ -49,6 +39,5 @@
                     </div>
                 </div>
             </div>
->>>>>>> aaf302d5078a68c90ddaab8e72d60990fda7a682
     </body>
 </html>

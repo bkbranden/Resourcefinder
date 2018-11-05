@@ -1,22 +1,5 @@
 [
     {
-<<<<<<< HEAD
-        "model": "frontend.location",
-        "pk": 1,
-        "fields": {
-            "location_name": "Clemons",
-            "maximum_capacity": 100,
-            "current_occupancy": 10
-        }
-    },
-    {
-        "model": "frontend.location",
-        "pk": 2,
-        "fields": {
-            "location_name": "Alderman",
-            "maximum_capacity": 100,
-            "current_occupancy": 15
-=======
         "model": "frontend.student",
         "pk": 1,
         "fields": {
@@ -34,7 +17,6 @@
             "enter_time": "2018-02-14 00:00:00",
             "student_computing_id": "ok3ff",
             "student_location": "clark"
->>>>>>> aaf302d5078a68c90ddaab8e72d60990fda7a682
         }
     }
 ]
