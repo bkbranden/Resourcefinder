@@ -26,6 +26,7 @@ def logincheck(request):
         return render(request, 'frontend/index.html')
 
 def view_map(request):
+
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
     return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token })
 
@@ -46,3 +47,18 @@ def signpost(request):
         return HttpResponseRedirect('/')
     else:
         return render(request, 'frontend/signup.html')
+
+def estimatecapacity(location, userestimate):
+    model = Location
+    library_name = location.check_in(userestimate)
+    location.check_votes()
+
+
+    return library_name
+
+
+def getlibraries():
+    Library_list = Location.objects.all()
+    return Library_list
+
+

@@ -51,7 +51,7 @@
             
             "type": "Feature",      //clem
             "properties": {
-            "description": 'This is Clem Library',
+            "description": 'This is Clem' ,
             "title": 'Clem Library',
             "iconSize": [50, 50]
             },
@@ -122,8 +122,9 @@
             .setLngLat(marker.geometry.coordinates)
             .setPopup(new mapboxgl.Popup({offset: 25})
 
-            <!--.setHTML('<h3>' + marker.properties.title + '</h3>  <button type = "button" onclick = "check_in" > Checkin </button>'))-->
-                  .setHTML('<h3>' + marker.properties.title + '</h3>   <a href="{% url 'check_in' %}"> Check In</a>'))
+            .setHTML('<h3>' + marker.properties.title + '</h3>   <button type = "button" onclick = "check_in" > Checkin </button>'))
+
+                  <!--.setHTML('<h3>' + marker.properties.description + '</h3>   <a href="{% url 'check_in' %}"> Check In</a>'))-->
             .addTo(map);
             });
 
