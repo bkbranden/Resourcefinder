@@ -5,25 +5,25 @@ from .models import *
 from .views import *
 
 
-#Tests if client can access the site
+# Tests if client can access the site
 class TestAccess(TestCase):
 	def test_check_in_is_loaded(self):
 		response = self.client.get('')
 		self.assertEqual(response.status_code, 200)
 
-#Tests if client can access .../view_map/
+# Tests if client can access .../view_map/
 class TestMapAccess(TestCase):
 	def test_map_is_loaded(self):
 		response = self.client.get('/view_map/')
 		self.assertEqual(response.status_code, 200)
 
-#Tests if client can access .../check_in/
+# Tests if client can access .../check_in/
 class TestCheckinAccess(TestCase):
 	def test_check_in_is_loaded(self):
 		response = self.client.get('/check_in/')
 		self.assertEqual(response.status_code, 200)
 
-#Tests Location and Student models
+# Tests Location and Student models
 class TestCheckingMembers(TestCase):
 	def test_get_percentage_full(self):
 		l = Location(location_name = "Test Library")
