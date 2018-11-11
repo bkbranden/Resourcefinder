@@ -15,7 +15,7 @@ class Student(AbstractUser):
 	def __str__(self):
 		return self.student_name
 
-	#Takes in a Location model and an estimate value
+	# Takes in a Location model and an estimate value
 	def check_into(self, location, estimate):
 		self.enter_time = datetime.datetime.now()
 		self.student_location = location.check_in(estimate)

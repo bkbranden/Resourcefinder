@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Student
+from .models import Student, Location
 from .forms import UserForm
+
 from django.contrib.auth import authenticate
 
 def index(request):
     return render(request, 'frontend/index.html')
 
 def check_in(request):
+
     return render(request,'frontend/check_in.html')
    
 def logincheck(request):
@@ -44,4 +46,3 @@ def signpost(request):
         return HttpResponseRedirect('/')
     else:
         return render(request, 'frontend/signup.html')
-    

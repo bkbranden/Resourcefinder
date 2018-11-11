@@ -4,6 +4,7 @@
     <head>
         <meta charset='utf-8' />
         <title>Library Map</title>
+
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
             <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
@@ -120,9 +121,13 @@
             new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
             .setPopup(new mapboxgl.Popup({offset: 25})
-            .setHTML('<h3>' + marker.properties.title + '</h3><p>'+ marker.properties.description + '</p>'))
+
+            <!--.setHTML('<h3>' + marker.properties.title + '</h3>  <button type = "button" onclick = "check_in" > Checkin </button>'))-->
+                  .setHTML('<h3>' + marker.properties.title + '</h3>   <a href="{% url 'check_in' %}"> Check In</a>'))
             .addTo(map);
             });
+
+
             
             // Add geolocate control to the map.
             map.addControl(new mapboxgl.GeolocateControl({
