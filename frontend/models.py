@@ -1,4 +1,5 @@
 import datetime
+import json
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
@@ -27,15 +28,21 @@ class Student(AbstractUser):
 			# l = Location.objects.get(location_name = self.student_location)
 			self.student_location = ''
 
-
 class Location(models.Model):
 	location_name=models.CharField(max_length=200)
+	iconsize=models.CharField(max_length=200, default='')
+	coordinates=models.CharField(max_length=200, default='')
 
 	occupancy_list = []  # occupancy_list should contain tuples in the form of (estimated occupancy, time subitted)
 
 	def __str__(self):
 		return self.location_name
 
+	def set_list(self, x):
+		self.lists = json.dumps(x)
+
+	def get_list(self):
+		return json.loads(self.lists)
 	# Calculates average of all votes. Returns -1 if no votes
 	def get_percentage_full(self):
 		if len(self.occupancy_list) == 0:

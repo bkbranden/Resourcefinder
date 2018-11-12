@@ -1,0 +1,31 @@
+[
+    {
+        "model": "frontend.location",
+        "pk": 1,
+        "fields": {
+            "location_name": "Alderman",
+            "iconsize": "[50, 50]",
+            "coordinates": "[-78.5054, 38.0365]"
+        }
+    },
+
+    {
+        "model": "frontend.location",
+        "pk": 2,
+        "fields": {
+            "location_name": "Clemons",
+            "iconsize": "[50, 50]",
+            "coordinates": "[-78.5059886, 38.0363712]"
+        }
+    },
+
+    {
+        "model": "frontend.location",
+        "pk": 3,
+        "fields": {
+            "location_name": "Clark",
+            "iconsize": "[50, 50]",
+            "coordinates": "[-78.5078, 38.0330]"
+        }
+    }
+]
