@@ -6,8 +6,7 @@ from .forms import UserForm
 from django.contrib.auth import authenticate
 
 def index(request):
-all_libraries = Location.objects.all()
-
+    all_libraries = Location.objects.all()
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
     return render(request, 'frontend/index.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, })
 

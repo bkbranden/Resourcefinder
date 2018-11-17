@@ -8,13 +8,11 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
-
     <style>
         body {
             margin: 0;
             padding: 0;
         }
-
         .map {
             border-left: 1px solid #fff;
             position: absolute;
@@ -23,7 +21,6 @@
             top: 0;
             bottom: 0;
         }
-
         .sidenav {
             height: 100%;
             width: 400px;
@@ -35,7 +32,6 @@
             overflow-x: hidden;
             padding-top: 20px;
         }
-
         .sidenav a {
             padding: 6px 8px 6px 16px;
             text-decoration: none;
@@ -43,17 +39,124 @@
             color: #818181;
             display: block;
         }
-
         .sidenav a:hover {
             color: #000000;
         }
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 25px;
+            transition: 0.4s;
+        }
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+        h2 {
+            margin-bottom:0;
+        }       
+        h3 {
+            margin:0 0 30px;
+        } 
+        .ui-slider-range {
+            background:green;
+        }
+        .percent {
+            color:green;
+            font-weight:bold;
+            text-align:center;
+            width:100%;
+            border:none;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
     </style>
     <div class="sidenav">
-            <a href="{% url 'check_in' %}">Sign In</a>
-            <a href="{% url 'sign_in' %}"> Sign Up</a>
-            <a href="#clients">Check In</a>
-            <a href="#contact">Help</a>
-          </div>
+        <a href="{% url 'check_in' %}">Sign In</a>
+        <a href="{% url 'sign_in' %}"> Sign Up</a>
+        <button class="accordion"> Checkin</button>
+        <div class="panel">
+            <div class="container">
+                <div class="row">
+                    <div class="project col-md-4">
+
+                        <h2 class="text-center">
+                            <input type="text" class="percent" readonly />
+                        </h2>
+                        <h3 class="text-center">Percentage Full</h3>
+                        <div class="bar"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Issac: This section does not work. Only the word "Percentage Full" shows-->
+        <script>
+            $(function () {
+                $('.project').each(function () {
+                    var $projectBar = $(this).find('.bar');
+                    var $projectPercent = $(this).find('.percent');
+                    var $projectRange = $(this).find('.ui-slider-range');
+                    $projectBar.slider({
+                        range: "min",
+                        animate: true,
+                        value: 1,
+                        min: 0,
+                        max: 100,
+                        step: 1,
+                        slide: function (event, ui) {
+                            $projectPercent.val(ui.value + "%");
+                        },
+                        change: function (event, ui) {
+                            var $projectRange = $(this).find('.ui-slider-range');
+                            var percent = ui.value;
+                            if (percent < 30) {
+                                $projectPercent.css({
+                                    'color': 'green'
+                                });
+                                $projectRange.css({
+                                    'background': '#f20000'
+                                });
+                            } else if (percent > 31 && percent < 70) {
+                                $projectPercent.css({
+                                    'color': 'gold'
+                                });
+                                $projectRange.css({
+                                    'background': 'gold'
+                                });
+                            } else if (percent > 70) {
+                                $projectPercent.css({
+                                    'color': 'red'
+                                });
+                                $projectRange.css({
+                                    'background': 'red'
+                                });
+                            }
+                        }
+                    });
+                })
+            })
+        </script>
+
+
+        <button class="accordion"> Help</button>
+        <div class="panel">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+        </div>
+    </div>
 
 </head>
 
@@ -142,6 +245,21 @@
             center: [-78.5064, 38.0348],
             zoom: 16
         });
+
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
 
 
 
