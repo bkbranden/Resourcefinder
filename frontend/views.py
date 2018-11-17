@@ -26,9 +26,10 @@ def logincheck(request):
         return render(request, 'frontend/index.html')
 
 def view_map(request):
+    all_libraries = Location.objects.all()
 
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
-    return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token })
+    return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, })
 
 def viewusers(request):
     students = Student.objects.all()
