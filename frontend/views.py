@@ -6,7 +6,10 @@ from .forms import UserForm
 from django.contrib.auth import authenticate
 
 def index(request):
-    return render(request, 'frontend/index.html')
+all_libraries = Location.objects.all()
+
+    mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
+    return render(request, 'frontend/index.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, })
 
 def check_in(request):
 
@@ -26,10 +29,11 @@ def logincheck(request):
     else:
         return render(request, 'frontend/index.html')
 
-def view_map(request):
+# def view_map(request):
+#     all_libraries = Location.objects.all()
 
-    mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
-    return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token })
+#     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
+#     return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, })
 
 def viewusers(request):
     students = Student.objects.all()

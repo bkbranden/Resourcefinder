@@ -14,3 +14,4 @@ urlpatterns = [
 
 # path('view_map/', views.view_map, name='view_map'),
     # path('view_map/check_in/', views.view_map.check_in, name='check_in1'),
+
