@@ -180,6 +180,7 @@
             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                 </div>
            <p> <center>Capacity: <span id="demo"></span>% full </center></p>
+           <div id="modalSubmitDiv" >  </div>
       </div>
 
     </div>
@@ -402,9 +403,9 @@
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 })
 
-                    .setHTML('<h3>' + marker.properties.title + '</h3> <p> Estimated Occupancy: '+  marker.properties.occupancy  +'  </p>   <button type = "button" id= "'+ marker.properties.id  +' " onclick = "openModal(\''+ marker.properties.title + '\',2)" > Checkin </button>'))
+                    .setHTML('<h3>' + marker.properties.title + '</h3> <p> Estimated Occupancy: '+  marker.properties.occupancy  +'  </p>   <button type = "button" id= "'+ marker.properties.id  +' " onclick = "openModal(\''+ marker.properties.title + '\',\''+ marker.properties.id + '\')" > Checkin </button>'))
 
-                //   <!--.setHTML('<h3>' + marker.properties.description + '</h3>   <a href="{% url 'check_in' %}"> Check In</a>'))-->
+
                 .addTo(map);
         });
         map.addControl(new mapboxgl.NavigationControl());
@@ -426,6 +427,7 @@
         }), 'top-left');
 
 
+
         // Get the modal
         var modal = document.getElementById('myModal');
 
@@ -440,6 +442,8 @@
             modal.style.display = "block";
             //update modal text
             document.getElementById("modalText").innerHTML = "<center>How full does " + location_name + " look to you?</center>";
+            document.getElementById("modalSubmitDiv").innerHTML = "<center> <button id='modalSubmitButton' onclick = 'submitEstimate(\"" + location_name + "\" , \"" + location_id + "\",  captureSlider() )' > SUBMIT </button> </center>"
+
             }
         btn.onclick = function() {
             modal.style.display = "block";
@@ -457,14 +461,27 @@
             }
         }
 
-        //SLIDER CODE
-             var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
 
-        slider.oninput = function() {
-          output.innerHTML = this.value;
-}
+
+function submitEstimate(location_name, location_id, capacity_estimate){
+            document.getElementById("modalSubmitDiv").innerHTML = "<center> <button id='modalSubmitButton' > Happy Studying! </button> </center>"
+            console.log(location_name, location_id, capacity_estimate)
+            }
+
+
+     //SLIDER CODE
+                 var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            slider.oninput = function() {
+              output.innerHTML = this.value;
+    }
+        function captureSlider(){
+            return slider.value;
+
+            }
+
 
     </script>
 
