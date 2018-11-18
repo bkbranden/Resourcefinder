@@ -286,6 +286,7 @@
         type='text/css' />
     <div id='map' class='map'> </div>
 
+
     <script>
 
         <!--var occupancies = JSON.parse('{{ library_occupancies | escapejs }}')-->
@@ -462,10 +463,11 @@
         }
 
 
-
+//THIS CODE NEEDS TO BE COMPLETED -- need to ensure user is logged in, then call the model function to submit an estimate
 function submitEstimate(location_name, location_id, capacity_estimate){
             document.getElementById("modalSubmitDiv").innerHTML = "<center> <button id='modalSubmitButton' > Happy Studying! </button> </center>"
             console.log(location_name, location_id, capacity_estimate)
+            console.log({{ user }})
             }
 
 
@@ -484,6 +486,8 @@ function submitEstimate(location_name, location_id, capacity_estimate){
 
 
     </script>
+
+
 
 </body>
 
