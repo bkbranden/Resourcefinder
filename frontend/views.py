@@ -2,13 +2,23 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Student, Location
 from .forms import UserForm
+import json
+from django.core.serializers.json import DjangoJSONEncoder
 
 from django.contrib.auth import authenticate
 
 def index(request):
-    all_libraries = Location.objects.all()
+    all_libraries = Location.objects.all().order_by('location_name')
+    library_occupancies = {}
+    for library in all_libraries:
+        library_occupancies[library.location_name] = library.get_percentage_full()
+
+    occupancies_json = json.dumps(library_occupancies)
+    loaded_occupancies = json.loads(occupancies_json)
+    print(occupancies_json)
+    print(loaded_occupancies)
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
-    return render(request, 'frontend/index.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, })
+    return render(request, 'frontend/index.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, 'library_occupancies' : loaded_occupancies})
 
 def check_in(request):
 

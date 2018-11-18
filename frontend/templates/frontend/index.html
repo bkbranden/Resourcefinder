@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -162,6 +163,8 @@
 
 <body>
 
+<!--<p id="fuk">{{ library_occupancies.Alderman }} </p>-->
+
 
 
     <style>
@@ -186,9 +189,13 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.3/mapbox-gl-directions.css'
         type='text/css' />
-    <div id='map' class='map'></div>
+    <div id='map' class='map'> </div>
 
     <script>
+
+        <!--var occupancies = JSON.parse('{{ library_occupancies | escapejs }}')-->
+        <!--document.getElementById("fuk").innerHTML = library_occupancies.Alderman-->
+
         mapboxgl.accessToken = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA';
         var geojson = {
             "type": "FeatureCollection",
@@ -199,7 +206,9 @@
                     "properties": {
                         "description": 'This is Clem',
                         "title": 'Clem Library',
-                        "iconSize": [50, 50]
+                        "iconSize": [50, 50],
+                        "id" : 2,
+                        "occupancy" : {{library_occupancies.Clemons}}
                     },
                     "geometry": {
                         "type": "Point",
@@ -211,7 +220,11 @@
                     "properties": {
                         "description": 'This is Alderman Library',
                         "title": 'Alderman Library',
-                        "iconSize": [50, 50]
+                        "iconSize": [50, 50],
+                        "id": 0,
+                        "occupancy" : {{library_occupancies.Alderman}}
+
+
                     },
                     "geometry": {
                         "type": "Point",
@@ -226,7 +239,10 @@
                     "properties": {
                         "description": 'This is Clark Library',
                         "title": 'Clark Library',
-                        "iconSize": [50, 50]
+                        "iconSize": [50, 50],
+                        "id" : 1,
+                        "occupancy" : {{library_occupancies.Clark}}
+
                     },
                     "geometry": {
                         "type": "Point",
@@ -238,6 +254,8 @@
                 }
             ]
         };
+
+        <!--Alderman_json = json.dumps({{all_libraries}})-->
 
         var map = new mapboxgl.Map({
             container: 'map',
@@ -283,7 +301,7 @@
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 })
 
-                    .setHTML('<h3>' + marker.properties.title + '</h3>   <button type = "button" onclick = "check_in" > Checkin </button>'))
+                    .setHTML('<h3>' + marker.properties.title + '</h3> <p> Estimated Occupancy: '+  marker.properties.occupancy  +'  </p>   <button type = "button" id= "'+ marker.properties.id  +' " onclick = "check_in" > Checkin </button>'))
 
                 //   <!--.setHTML('<h3>' + marker.properties.description + '</h3>   <a href="{% url 'check_in' %}"> Check In</a>'))-->
                 .addTo(map);

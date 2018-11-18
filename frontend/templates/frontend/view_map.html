@@ -165,7 +165,7 @@
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 })
 
-                    .setHTML('<h3>' + marker.properties.title + '</h3>   <button type = "button" onclick = "check_in" > Checkin </button>'))
+                    .setHTML('<h3>' + marker.properties.title + '{{all_libraries.0}} test </h3>   <button type = "button" onclick = "check_in" > Checkin </button>'))
 
                 //   .setHTML('<h3>' + marker.properties.description + '</h3>   <a href="{% url 'check_in' %}"> Check In</a>'))-->
                 <!-- .addTo(map);
