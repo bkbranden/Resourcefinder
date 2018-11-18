@@ -174,8 +174,12 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p id = "modalText">Some text in the Modal..</p>
+        <p id = "modalText">Javascript overwrites this</p>
 
+              <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+           <p> <center>Capacity: <span id="demo"></span>% full </center></p>
       </div>
 
     </div>
@@ -234,6 +238,45 @@
             color: black;
             text-decoration: none;
             cursor: pointer;
+        }
+
+                .slidecontainer {
+            width: 100%; /* Width of the outside container */
+        }
+
+        /* The slider itself */
+        .slider {
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 25px; /* Specified height */
+            background: #d3d3d3; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+        }
+
+        /* Mouse-over effects */
+        .slider:hover {
+            opacity: 1; /* Fully shown on mouse-over */
+        }
+
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
         }
     </style>
 
@@ -396,7 +439,7 @@
         function openModal(location_name,location_id){
             modal.style.display = "block";
             //update modal text
-            document.getElementById("modalText").innerHTML = "How full does " + location_name + " look to you?";
+            document.getElementById("modalText").innerHTML = "<center>How full does " + location_name + " look to you?</center>";
             }
         btn.onclick = function() {
             modal.style.display = "block";
@@ -414,6 +457,14 @@
             }
         }
 
+        //SLIDER CODE
+             var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+}
 
     </script>
 
