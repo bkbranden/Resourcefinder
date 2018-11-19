@@ -126,7 +126,7 @@ def sendEmail(request):
                 'FromEmail': 'bkbrandenkim97@gmail.com',
                 'FromName': 'Branden Kim',
                 'Subject': 'Testing Reset Password',
-                'Text-part': 'Click this link to reset your email! https://www.morning-wildwood-43683.herokuapp.com/changepassword',
+                'Text-part': 'Click this link to reset your email! https://morning-wildwood-43683.herokuapp.com/changepassword',
                 'Recipients': [
                                 {
                                     "Email": email
