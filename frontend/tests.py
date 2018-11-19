@@ -11,12 +11,6 @@ class TestAccess(TestCase):
 		response = self.client.get('')
 		self.assertEqual(response.status_code, 200)
 
-# Tests if client can access .../view_map/
-class TestMapAccess(TestCase):
-	def test_map_is_loaded(self):
-		response = self.client.get('/view_map/')
-		self.assertEqual(response.status_code, 200)
-
 # Tests if client can access .../check_in/
 class TestCheckinAccess(TestCase):
 	def test_check_in_is_loaded(self):
