@@ -119,6 +119,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+MAILJET_API_KEY = '600b64804165773a27354c974a471cc0'
+MAILJET_API_SECRET = '650d368a068dade3e054a107ead5d481'
+
+# MJ_APIKEY_PUBLIC = '600b64804165773a27354c974a471cc0'
+# MJ_APIKEY_PRIVATE = '650d368a068dade3e054a107ead5d481'
+# API_KEY = os.environ['MJ_APIKEY_PUBLIC']
+# API_SECRET = os.environ['MJ_APIKEY_PRIVATE']
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

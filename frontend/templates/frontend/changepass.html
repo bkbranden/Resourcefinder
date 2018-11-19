@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/frontend/css/changepassword.css"/>
+        
+    </head>
+    <body>
+        <div id="container">
+
+                <div id="header">
+                    <center><h1>Change Password</h1></center>
+                </div> 
+                <form class="form" action="" method="POST" id="post-form">
+                {% csrf_token %}
+                <div id="form">
+                    <input type="text" placeholder="Username" id="username"/>
+                    <input type="password" placeholder="New Password" id="passOne"/>
+                    <input type="password" placeholder="Confirm Password" id="passTwo"/>
+                </div>
+                <div id="footer" class="incorrect">
+                    <center><input type="submit" id="footerText" value=""/></center>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="../../static/frontend/vendor/jquery/jquery.min.js"></script>
+        <script src="../../static/frontend/js/changepassword.js"></script>
+</html>

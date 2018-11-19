@@ -161,6 +161,7 @@
 
 </head>
 
+<<<<<<< HEAD
 <body>
 
 <<<<<<< HEAD
@@ -175,10 +176,18 @@
 =======
 <!--<p id="fuk">{{ library_occupancies.Alderman }} </p>-->
 >>>>>>> cd7c48fda2d9c8f31b8f9b76aa2c63c8867ea2d9
+=======
+  {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+  {% else %}
+    <p>You are not logged in</p>
+  {% endif %}
+>>>>>>> featuresandlogin
 
 <!-- Trigger/Open The Modal -->
     <button id="myBtn">Open Modal</button>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     <a href="{% url 'view_map' %}"> View Map</a>
     <a href="{% url 'viewusers' %}"> View Users</a>
@@ -191,6 +200,10 @@
         <span class="close">&times;</span>
         <p id = "modalText">Javascript overwrites this</p>
 >>>>>>> cd7c48fda2d9c8f31b8f9b76aa2c63c8867ea2d9
+=======
+    <a href="{% url 'view_map' %}"> View Map</a> 
+    <a href="{% url 'logout' %}">Log out</a>
+>>>>>>> featuresandlogin
 
               <div class="slidecontainer">
             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">

@@ -9,12 +9,21 @@ from django.contrib.auth.models import AbstractUser
 
 
 class Student(AbstractUser):
+<<<<<<< HEAD
     student_name = models.CharField(max_length=200, default='')
     enter_time = models.DateTimeField(null = True)
     student_computing_id = models.CharField(max_length=200)
     student_location = models.CharField(max_length=200, default='')
     def __str__(self):
         return self.student_name
+=======
+	student_name = models.CharField(max_length=200)
+	enter_time = models.DateTimeField(null = True)
+	student_computing_id = models.CharField(max_length=200)
+	student_location = models.CharField(max_length=200, default='')
+	def __str__(self):
+		return self.student_name
+>>>>>>> featuresandlogin
 
     # Takes in a Location model and an estimate value
     def check_into(self, location, estimate):
@@ -32,8 +41,11 @@ class Location(models.Model):
 	location_name=models.CharField(max_length=200)
 	iconsize=models.CharField(max_length=200, default='')
 	coordinates=models.CharField(max_length=200, default='')
+	title=models.CharField(max_length=500, default='')
+	description=models.CharField(max_length=2000, default='')
+	percent_full=models.IntegerField(default=0)
 
-	occupancy_list = []  # occupancy_list should contain tuples in the form of (estimated occupancy, time subitted)
+	occupancy_list = [(50, int(datetime.datetime.now().strftime("%H")))]  # occupancy_list should contain tuples in the form of (estimated occupancy, time subitted)
 
 	def __str__(self):
 		return self.location_name
@@ -54,9 +66,13 @@ class Location(models.Model):
 
 	# Estimation is the value given by the user when they are asked "How full is this space?"
 	def check_in(self, estimation):
-		estimate = (estimation, datetime.datetime.now())
+		timeobj = datetime.datetime.now()
+		hourTime = int(timeobj.strftime("%H"))
+		for i in self.occupancy_list:
+			if (abs(int(i[1] - hourTime)) > 2):
+				self.occupancy_list.remove(i)
+		estimate = (estimation, hourTime)
 		self.occupancy_list.append(estimate)
-		return self.location_name
 
 	# Call this method every interval
 	def check_votes(self):

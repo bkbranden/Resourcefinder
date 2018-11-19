@@ -4,8 +4,11 @@
         "pk": 1,
         "fields": {
             "location_name": "Alderman",
-            "iconsize": "[50, 50]",
-            "coordinates": "[-78.5054, 38.0365]"
+            "iconsize": "50 50",
+            "coordinates": "-78.5054 38.0365",
+            "title": "Alderman Library",
+            "description": "Description for this location",
+            "percent_full": 40
         }
     },
 
@@ -14,8 +17,11 @@
         "pk": 2,
         "fields": {
             "location_name": "Clemons",
-            "iconsize": "[50, 50]",
-            "coordinates": "[-78.5059886, 38.0363712]"
+            "iconsize": "50 50",
+            "coordinates": "-78.5059886 38.0363712",
+            "title": "Clemons Library",
+            "description": "Description for this location",
+            "percent_full": 50
         }
     },
 
@@ -24,8 +30,11 @@
         "pk": 3,
         "fields": {
             "location_name": "Clark",
-            "iconsize": "[50, 50]",
-            "coordinates": "[-78.5078, 38.0330]"
+            "iconsize": "50 50",
+            "coordinates": "-78.5078 38.0330",
+            "title": "Clark Library",
+            "description": "Description for this location",
+            "percent_full": 60
         }
     }
 ]
