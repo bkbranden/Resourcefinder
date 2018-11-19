@@ -8,6 +8,9 @@ from django.contrib.auth import authenticate, login, logout
 from mailjet_rest import Client
 mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3')
 
+import json
+from django.core import serializers
+
 
 
 def index(request):
@@ -36,9 +39,27 @@ def logincheck(request):
         return render(request, 'frontend/index.html')
 
 def view_map(request):
-
+    libraries_json = serializers.serialize('json', Location.objects.all())
+    getvalues = Location.objects.all()
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
-    return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token })
+    return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : libraries_json, 'locationvalues': getvalues})
+
+def updateOccupancy(request):
+    libraries_json = serializers.serialize('json', Location.objects.all())
+    getvalues = Location.objects.all()
+    mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
+    if(request.method == "POST"):
+        occupancyvalue = request.POST.get('myRange')
+        locationname = request.POST.get('location')
+        locationupdate = Location.objects.get(location_name =locationname)
+        locationupdate.check_in(int(occupancyvalue))
+        updatedValue = int(locationupdate.get_percentage_full())
+        locationupdate.percent_full = updatedValue
+        locationupdate.save()
+        libraries_json = serializers.serialize('json', Location.objects.all())
+        return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : libraries_json, 'locationvalues': getvalues})
+    else:
+        return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : libraries_json, 'locationvalues': getvalues})
 
 def viewusers(request):
     students = Student.objects.all()
@@ -115,3 +136,4 @@ def changePassword(request):
 
 def changepass(request):
     return render(request, 'frontend/changepass.html')
+
