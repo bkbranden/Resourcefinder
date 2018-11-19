@@ -12,7 +12,6 @@ class Student(AbstractUser):
 	enter_time = models.DateTimeField(null = True)
 	student_computing_id = models.CharField(max_length=200)
 	student_location = models.CharField(max_length=200, default='')
-	password = models.CharField(max_length=50, null = True)
 	def __str__(self):
 		return self.student_name
 
