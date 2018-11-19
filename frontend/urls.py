@@ -3,7 +3,6 @@ from . import views
 from django.conf import settings
 
 urlpatterns = [
-
     path('', views.check_in, name="checkin"),
     path('check', views.logincheck),
     path('view_map/', views.view_map, name='view_map'),

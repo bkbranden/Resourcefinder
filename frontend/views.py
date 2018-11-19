@@ -7,7 +7,6 @@ from django.core.serializers.json import DjangoJSONEncoder
 
 from django.contrib.auth import authenticate, login, logout
 from absurdvacations.settings import MAILJET_API_KEY, MAILJET_API_SECRET
-from django.contrib.auth import authenticate, login, logout
 
 from mailjet_rest import Client
 mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3')
@@ -44,10 +43,6 @@ def forgotpass(request):
 
     
    
-def logout_view(request):
-    logout(request)
-    request.session.flush()
-    return render(request, 'frontend/check_in.html')
 
 def logincheck(request):
     if(request.method == "POST"):
@@ -98,7 +93,7 @@ def signpost(request):
             return render(request, "frontend/signup.html", {'messsage': "Please fill out all the information"})
         sendData = Student.objects.create_user(username, email, pwd)
         sendData.save()
-        return HttpResponseRedirect('frontend/check_in.html')
+        return HttpResponseRedirect('/')
     else:
         return render(request, 'frontend/signup.html')
 
