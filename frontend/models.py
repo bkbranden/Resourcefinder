@@ -8,25 +8,24 @@ from django.contrib.auth.models import AbstractUser
 
 
 class Student(AbstractUser):
-	student_name = models.CharField(max_length=200)
-	enter_time = models.DateTimeField(null = True)
-	student_computing_id = models.CharField(max_length=200)
-	student_location = models.CharField(max_length=200, default='')
-	password = models.CharField(max_length=50, null = True)
-	def __str__(self):
-		return self.student_name
+    student_name = models.CharField(max_length=200, default='')
+    enter_time = models.DateTimeField(null = True)
+    student_computing_id = models.CharField(max_length=200)
+    student_location = models.CharField(max_length=200, default='')
+    def __str__(self):
+        return self.student_name
 
-	# Takes in a Location model and an estimate value
-	def check_into(self, location, estimate):
-		self.enter_time = datetime.datetime.now()
-		self.student_location = location.check_in(estimate)
+    # Takes in a Location model and an estimate value
+    def check_into(self, location, estimate):
+        self.enter_time = datetime.datetime.now()
+        self.student_location = location.check_in(estimate)
 
-	# Do we need this anymore?
-	def time_out(self):
-		elapsed_time = datetime.datetime.now() - self.enter_time
-		if abs(elapsed_time) > datetime.timedelta(hours = 3):
-			# l = Location.objects.get(location_name = self.student_location)
-			self.student_location = ''
+    # Do we need this anymore?
+    def time_out(self):
+        elapsed_time = datetime.datetime.now() - self.enter_time
+        if abs(elapsed_time) > datetime.timedelta(hours = 3):
+            # l = Location.objects.get(location_name = self.student_location)
+            self.student_location = ''
 
 class Location(models.Model):
 	location_name=models.CharField(max_length=200)

@@ -106,6 +106,7 @@
             // add markers to map
             geojson.features.forEach(function(marker) {
             // create a DOM element for the marker
+            // To create these elements we need to turn the data in the database in json objects so that javascript can read it
             var el = document.createElement('div');
             el.className = 'marker';
             el.style.backgroundImage = 'url("https://img.icons8.com/color/50/000000/library.png")';

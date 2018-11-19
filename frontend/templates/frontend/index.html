@@ -10,13 +10,18 @@
   <h1> Welcome to the Resources Finder</h1>
 
 
+    {% block content %}
+    {% if user.is_authenticated %}
+    Hi {{ user.username  }}
+    <a href="{% url 'logout' %}">Logout </a>
+    {% else %}
+    You are not logged in
+    {% endif %}
+    {% endblock %}
 
 
-
-    <a href="{% url 'view_map' %}"> View Map</a> 
-    <a href="{% url 'check_in' %}"> Check In</a>
+    <a href="{% url 'view_map' %}"> View Map</a>
     <a href="{% url 'viewusers' %}"> View Users</a>
-    <a href="{% url 'sign_in' %}"> Sign In</a>
 
   <section class="section">
     <div class="container">
