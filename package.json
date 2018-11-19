@@ -25,6 +25,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
+    "@appbaseio/reactivesearch": "^2.14.1",
     "rangeslider.js": "^2.3.2"
   }
 }
