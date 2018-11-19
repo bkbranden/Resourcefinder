@@ -31,6 +31,8 @@ function showDetail(x){
         slider.setAttribute("max", "100")
         slider.setAttribute("id", "myRange")
         slider.setAttribute("class", "slider")
+        slider.setAttribute('name', 'myRange')
+
         slider.style="visibility: visible;";
         var out = document.getElementById('out')
         out.style = "visibility:visible;";
@@ -75,6 +77,9 @@ function showDetail(x){
         var inputname = document.getElementById('location')
         inputname.setAttribute('type', 'hidden')
         inputname.setAttribute('value', locname)
+        inputname.setAttribute('name', 'location')
+        inputname.style="visiblity:hidden;";
+
 
 
 
@@ -98,12 +103,17 @@ function showDetail(x){
         var slider = document.getElementById("myRange")
 
         slider.setAttribute("value", startvalue)
+        slider.setAttribute('name', 'myRange')
+
         var out = document.getElementById('out')
         out.innerHTML = slider.defaultValue;
 
         var inputname = document.getElementById('location')
         inputname.setAttribute('type', 'hidden')
         inputname.setAttribute('value', locname)
+        inputname.setAttribute('name', 'location')
+
+        inputname.style="visiblity:hidden;";
     }
     
         
@@ -119,6 +129,7 @@ function removeDetails(){
     var createSlider = document.createElement('input')
     createSlider.style = "visibility:hidden;"
     createSlider.setAttribute('id', 'myRange')
+    createSlider.setAttribute('name', 'myRange')
     var createOutput = document.createElement('p')
     createOutput.style = "visibility:hidden;";
     createOutput.setAttribute('id', 'out');
@@ -126,6 +137,9 @@ function removeDetails(){
     inputname.setAttribute('id', 'location')
     inputname.setAttribute('type', 'hidden')
     inputname.setAttribute('value', locname)
+    inputname.setAttribute('name', 'location')
+    inputname.style="visiblity:hidden;";
+
     myNode.appendChild(inputname)
     myNode.appendChild(createSlider)
     myNode.appendChild(createOutput)
