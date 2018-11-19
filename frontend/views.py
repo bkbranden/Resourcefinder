@@ -89,6 +89,8 @@ def signpost(request):
         username = request.POST.get("username")
         pwd= request.POST.get("password")
         email = request.POST.get('email')
+        if(Student.objects.filter(username=username)):
+            return render(request, 'frontend/signup.html')
         if(username == "" or pwd == "" or email == ""):
             return render(request, "frontend/signup.html", {'messsage': "Please fill out all the information"})
         sendData = Student.objects.create_user(username, email, pwd)

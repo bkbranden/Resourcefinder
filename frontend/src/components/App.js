@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import DataProvider from "./DataProvider";
-import Table from "./Table";
 import Board from "./testComponents";
+import Search from './search';
 
 
 class Game extends React.Component {
