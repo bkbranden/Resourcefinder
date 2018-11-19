@@ -1,17 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Student, Location
-<<<<<<< HEAD
-=======
-from .forms import UserForm
-<<<<<<< HEAD
 import json
 from django.core.serializers.json import DjangoJSONEncoder
->>>>>>> cd7c48fda2d9c8f31b8f9b76aa2c63c8867ea2d9
 
 
 from django.contrib.auth import authenticate, login, logout
-=======
 from absurdvacations.settings import MAILJET_API_KEY, MAILJET_API_SECRET
 from django.contrib.auth import authenticate, login, logout
 
@@ -22,7 +16,6 @@ import json
 from django.core import serializers
 
 
->>>>>>> featuresandlogin
 
 def index(request):
     all_libraries = Location.objects.all().order_by('location_name')
@@ -40,7 +33,6 @@ def index(request):
 def check_in(request):
 
     return render(request,'frontend/check_in.html')
-<<<<<<< HEAD
 
 def logout_view(request):
     logout(request)
@@ -50,18 +42,13 @@ def logout_view(request):
 def forgotpass(request):
     return render(request, 'frontend/index.html')
 
-=======
     
    
-<<<<<<< HEAD
->>>>>>> cd7c48fda2d9c8f31b8f9b76aa2c63c8867ea2d9
-=======
 def logout_view(request):
     logout(request)
     request.session.flush()
     return render(request, 'frontend/check_in.html')
 
->>>>>>> featuresandlogin
 def logincheck(request):
     if(request.method == "POST"):
         username = request.POST.get('username')
@@ -75,20 +62,7 @@ def logincheck(request):
     else:
         return render(request, 'frontend/index.html')
 
-<<<<<<< HEAD
 def view_map(request):
-<<<<<<< HEAD
-    locations = Location.objects.all()
-    mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
-    return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'locations': locations })
-=======
-# def view_map(request):
-#     all_libraries = Location.objects.all()
-
-#     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
-#     return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, })
->>>>>>> cd7c48fda2d9c8f31b8f9b76aa2c63c8867ea2d9
-=======
     libraries_json = serializers.serialize('json', Location.objects.all())
     getvalues = Location.objects.all()
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
@@ -110,7 +84,6 @@ def updateOccupancy(request):
         return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : libraries_json, 'locationvalues': getvalues})
     else:
         return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : libraries_json, 'locationvalues': getvalues})
->>>>>>> featuresandlogin
 
 def viewusers(request):
     students = Student.objects.all()
@@ -124,10 +97,6 @@ def signpost(request):
         if(username == "" or pwd == "" or email == ""):
             return render(request, "frontend/signup.html", {'messsage': "Please fill out all the information"})
         sendData = Student.objects.create_user(username, email, pwd)
-<<<<<<< HEAD
-        sendData.student_name = username
-=======
->>>>>>> featuresandlogin
         sendData.save()
         return HttpResponseRedirect('frontend/check_in.html')
     else:
@@ -191,4 +160,3 @@ def changePassword(request):
 
 def changepass(request):
     return render(request, 'frontend/changepass.html')
-
