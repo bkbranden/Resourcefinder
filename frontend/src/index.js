@@ -34,7 +34,10 @@ class App extends React.Component {
             let jsondata = JSON.parse(data)
             let pictures = jsondata.map((pic) => {
                 return(
-                        <img key={pic.pk} src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
+                    <div key={pic.pk}>
+                        <h1 className="resname">{pic.fields.location_name}</h1>
+                        <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
+                     </div>
                 )
             })
             let temp = jsondata.map((pic) => pic);
@@ -71,6 +74,7 @@ class App extends React.Component {
                 let pictures = jsondata.map((pic) => {
                     return(
                         <div key={pic.pk}>
+                            <h1 className="resname">{pic.fields.location_name}</h1>
                             <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
                         </div>
                     )
@@ -89,6 +93,7 @@ class App extends React.Component {
                 let pictures = jsondata.map((pic) => {
                     return(
                         <div key={pic.pk}>
+                            <h1 className="resname">{pic.fields.location_name}</h1>
                             <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
                         </div>
                     )
@@ -112,7 +117,7 @@ class App extends React.Component {
                 <SearchBar onTermChange={term => this.handleTermChange(term)} />
                 <ImageList images = {this.state.pictures} 
                            onImageSelect={selected => this.openModal(selected)}
-                           info={this.state.info} />
+                           />
                 <ImageModal isOpen={this.state.isOpen}
                             selected={this.state.selected}
                             onRequestClose={ () => this.closeModal()}

@@ -14,6 +14,11 @@
     transform: translateX(-50%) translateY(-50%);
 }
 
+.resname{
+    color:#c51f5d;
+    text-align: center;
+}
+
 .container1{
     text-align: justify;
 }
