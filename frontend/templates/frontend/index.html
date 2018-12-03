@@ -11,7 +11,7 @@
 <body>
     <header class="header">
         <h1 class="logo"><a href="#">{% if user.is_authenticated %}
-            Hi {{ user.username }}!
+            Hi {{ user.username }}, Welcome to your hub!
           {% else %}
             <p>You are not logged in</p>
           {% endif %}</a></h1>

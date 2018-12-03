@@ -6,10 +6,10 @@ function checkPassword(){
     let value = passwordnode.value;
     if(strongRegex.test(value)){
         messagenode.innerHTML = "";
-        breaknode.innerHTML = "";
+        // breaknode.innerHTML = "";
     }
     else{
-        breaknode.innerHTML = "<br/>";
-        messagenode.innerHTML = "Password must be of length 8, and" +"<br/>" + " include at least 1 uppercase letter and 1 number";
+        // breaknode.innerHTML = "<br/>";
+        messagenode.innerHTML = "Password must be of length 8, and include at least 1 uppercase letter and 1 number";
     }
 }
