@@ -8,7 +8,12 @@ import '../static/frontend/css/apps.css';
 import WeatherApp from './components/WeatherApp';
 
 
-
+const linksstyle={
+    color: "#c51f5d",
+    textAlign: "center",
+    visibility: "visible",
+    fontSize: 18
+}
 // import '../static/frontend/css/styles.css';
 // import Main from './components/App';
 // ReactDOM.render(<Main />, document.getElementById('root'));
@@ -35,8 +40,9 @@ class App extends React.Component {
             let pictures = jsondata.map((pic) => {
                 return(
                     <div key={pic.pk}>
-                        <h1 className="resname">{pic.fields.location_name}</h1>
+                        <h1 className="resname" style={linksstyle}>{pic.fields.location_name}</h1>
                         <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
+                        <h1 className="resname"><a style={linksstyle} href="/view_map">View on the map!</a></h1>
                      </div>
                 )
             })
@@ -74,8 +80,9 @@ class App extends React.Component {
                 let pictures = jsondata.map((pic) => {
                     return(
                         <div key={pic.pk}>
-                            <h1 className="resname">{pic.fields.location_name}</h1>
-                            <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
+                            <h1 className="resname" style={linksstyle}>{pic.fields.location_name}</h1>
+                        <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
+                        <h1 className="resname"><a style={linksstyle} href="/view_map">View on the map!</a></h1>
                         </div>
                     )
                 })
@@ -93,8 +100,9 @@ class App extends React.Component {
                 let pictures = jsondata.map((pic) => {
                     return(
                         <div key={pic.pk}>
-                            <h1 className="resname">{pic.fields.location_name}</h1>
+                            <h1 className="resname" style={linksstyle}>{pic.fields.location_name}</h1>
                             <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
+                            <h1 className="resname"><a style={linksstyle} href="/view_map">View on the map!</a></h1>
                         </div>
                     )
                 })
@@ -114,6 +122,7 @@ class App extends React.Component {
         return (
             <div>
                 <WeatherApp />
+                <br/>
                 <SearchBar onTermChange={term => this.handleTermChange(term)} />
                 <ImageList images = {this.state.pictures} 
                            onImageSelect={selected => this.openModal(selected)}

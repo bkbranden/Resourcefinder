@@ -12,7 +12,7 @@ class WeatherApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            unit: 'C',
+            unit: 'F',
             queryString: '',
             latLng: [],
             navbarData: {}, //this

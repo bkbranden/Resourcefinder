@@ -17,7 +17,6 @@ const ImageModal = (props) => {
                     onClickAway={() => props.onRequestClose()}
                 >
                     <div className="modalwrapper">
-                        <h1>{props.info.fields.location_name}</h1>
                         {props.selected}
                         <h2>{props.info.fields.description}</h2>
                         <h3>{props.info.fields.percent_full}% Occupancy</h3>
