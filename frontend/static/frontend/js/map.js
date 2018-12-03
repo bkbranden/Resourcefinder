@@ -17,13 +17,15 @@ var card = "<div class='card' style='width: 18rem;'> \n <img class='card-img-top
 var startvalue;
 var locname
 function showDetail(x){ 
+        console.log(x);
+        console.log("werwerw")
         geojson.forEach(function(element){
             if(element.fields.location_name == x){
                 startvalue = element.fields.percent_full
                 locname = x
             }
+            console.log(element.fields.location_name);
         });
-        console.log(element);
         if(doOnce == false){
         var slider = document.getElementById("myRange")
         slider.setAttribute("value", startvalue)
