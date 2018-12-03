@@ -40,12 +40,12 @@ class App extends React.Component {
             let temp = jsondata.map((pic) => pic);
             this.setState({pictures: pictures});
             this.setState({info: temp});
+            console.log(temp);
         })
     }
 
     openModal(image){
         let stringtoint = parseInt(image.key, 10);
-        console.log(stringtoint)
         let temp = this.state.info[stringtoint -1]
         this.setState({
             isOpen: true,
