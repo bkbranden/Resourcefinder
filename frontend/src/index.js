@@ -111,7 +111,8 @@ class App extends React.Component {
                 <WeatherApp />
                 <SearchBar onTermChange={term => this.handleTermChange(term)} />
                 <ImageList images = {this.state.pictures} 
-                           onImageSelect={selected => this.openModal(selected) } />
+                           onImageSelect={selected => this.openModal(selected)}
+                           info={this.state.info} />
                 <ImageModal isOpen={this.state.isOpen}
                             selected={this.state.selected}
                             onRequestClose={ () => this.closeModal()}
