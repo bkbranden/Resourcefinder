@@ -62,16 +62,16 @@ function showDetail(x){
 
         document.getElementById('info').appendChild(overalldiv)
         var imgchoose = document.getElementById('imgchoose');
-        if(x == "Clemons"){
+        if(x == "Clemons" || x == "clemons"){
             imgchoose.src = "../../static/frontend/images/Clemons.jpg"
         }
-        if(x == "Alderman"){
+        if(x == "Alderman" || x == "alderman"){
             imgchoose.src = "../../static/frontend/images/alderman.jpg"
         }
-        if(x == "Clark"){
+        if(x == "Clark" || x == "clark"){
             imgchoose.src = "../../static/frontend/images/clark.jpg"
         }
-        if(x == "AFC"){
+        if(x == "AFC" || x == "afc"){
             imgchoose.src = "../../static/frontend/images/afc.jpg"
         }
         if(x == "roots"){
@@ -101,7 +101,7 @@ function showDetail(x){
         if(x == "mem"){
             imgchoose.src = "../../static/frontend/images/mem.jpg"
         }
-        if(x == "northGrounds"){
+        if(x == "northGrounds" || x == "northgrounds"){
             imgchoose.src = "../../static/frontend/images/northGrounds.jpg"
         }
         if(x == "runk"){
@@ -110,28 +110,28 @@ function showDetail(x){
         if (x == "1515") {
             imgchoose.src = "../../static/frontend/images/1515.jpg"
         }
-        if (x == "ClaudeMooreHealthSciencesLibrary") {
+        if (x == "ClaudeMooreHealthSciencesLibrary" || x == "claudemoorehealthscienceslibrary") {
             imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
         }
         if (x == "dardenschoolofbusiness") {
             imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
         }
-        if (x == "DavisCommons") {
+        if (x == "DavisCommons" || x == "daviscommons") {
             imgchoose.src = "../../static/frontend/images/daviscommons.jpg"
         }
-        if (x == "Lawn") {
+        if (x == "Lawn" || x == "lawn") {
             imgchoose.src = "../../static/frontend/images/lawn.jpg"
         }
-        if (x == "McIntireSchoolofCommerce") {
+        if (x == "McIntireSchoolofCommerce" || x == "mcintireschoolofcommerce") {
             imgchoose.src = "../../static/frontend/images/mcintireschoolofcommerce.jpg"
         }
-        if (x == "NauHall") {
+        if (x == "NauHall" || x == "nauhall") {
             imgchoose.src = "../../static/frontend/images/nauhall.jpg"
         }
-        if (x == "OlssonLabs") {
+        if (x == "OlssonLabs" || x == "olssonlabs") {
             imgchoose.src = "../../static/frontend/images/olssonlabs.jpg"
         }
-        if (x == "RisingRoll") {
+        if (x == "RisingRoll" || x == "risingroll") {
             imgchoose.src = "../../static/frontend/images/risingroll.jpg"
         }
         if (x == "thortonstacks") {
@@ -173,16 +173,16 @@ function showDetail(x){
         test.setAttribute('id', 'name');
         test.innerHTML = locname
         var imgchoose = document.getElementsByClassName('card-img-top')[0]
-        if(x == "Clemons"){
+        if(x == "Clemons" || x == "clemons"){
             imgchoose.src = "../../static/frontend/images/Clemons.jpg"
         }
-        if(x == "Alderman"){
+        if(x == "Alderman" || x == "alderman"){
             imgchoose.src = "../../static/frontend/images/alderman.jpg"
         }
-        if(x == "Clark"){
+        if(x == "Clark" || x == "clark"){
             imgchoose.src = "../../static/frontend/images/clark.jpg"
         }
-        if(x == "AFC"){
+        if(x == "AFC" || x == "afc"){
             imgchoose.src = "../../static/frontend/images/afc.jpg"
         }
         if(x == "roots"){
@@ -212,7 +212,7 @@ function showDetail(x){
         if(x == "mem"){
             imgchoose.src = "../../static/frontend/images/mem.jpg"
         }
-        if(x == "northGrounds"){
+        if(x == "northGrounds" || x == "northgrounds"){
             imgchoose.src = "../../static/frontend/images/northGrounds.jpg"
         }
         if(x == "runk"){
@@ -221,28 +221,28 @@ function showDetail(x){
         if (x == "1515") {
             imgchoose.src = "../../static/frontend/images/1515.jpg"
         }
-        if (x == "ClaudeMooreHealthSciencesLibrary") {
+        if (x == "ClaudeMooreHealthSciencesLibrary" || x == "claudemoorehealthscienceslibrary") {
             imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
         }
         if (x == "dardenschoolofbusiness") {
             imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
         }
-        if (x == "DavisCommons") {
+        if (x == "DavisCommons" || x == "daviscommons") {
             imgchoose.src = "../../static/frontend/images/daviscommons.jpg"
         }
-        if (x == "Lawn") {
+        if (x == "Lawn" || x == "lawn") {
             imgchoose.src = "../../static/frontend/images/lawn.jpg"
         }
-        if (x == "McIntireSchoolofCommerce") {
+        if (x == "McIntireSchoolofCommerce" || x == "mcintireschoolofcommerce") {
             imgchoose.src = "../../static/frontend/images/mcintireschoolofcommerce.jpg"
         }
-        if (x == "NauHall") {
+        if (x == "NauHall" || x == "nauhall") {
             imgchoose.src = "../../static/frontend/images/nauhall.jpg"
         }
-        if (x == "OlssonLabs") {
+        if (x == "OlssonLabs" || x == "olssonlabs") {
             imgchoose.src = "../../static/frontend/images/olssonlabs.jpg"
         }
-        if (x == "RisingRoll") {
+        if (x == "RisingRoll" || x == "risingroll") {
             imgchoose.src = "../../static/frontend/images/risingroll.jpg"
         }
         if (x == "thortonstacks") {
