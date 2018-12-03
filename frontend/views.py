@@ -163,5 +163,5 @@ def listresource(request, search):
 
 @csrf_exempt
 def allresources(request):
-    resources_json = serializers.serialize('json', Location.objects.all())
+    resources_json = serializers.serialize('json', Location.objects.all().order_by('pk'))
     return JsonResponse(resources_json, safe=False)
