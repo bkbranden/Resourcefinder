@@ -1,0 +1,38 @@
+.wi-blue{
+    color:#00acee;
+}
+.wi-yellow{
+color:#fdc201
+}
+.wi-gray{
+color:#6c7a89
+}
+
+.app-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.app-list-graph{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+}
+
+.app-list-graph > div{
+    flex-basis: 50%;
+}
+
+@media all and (max-width:768px){
+    .app-list-graph{
+        flex-direction: column;
+    } 
+}
+.app-instruction{
+    font-size: 1.1rem;
+    margin: auto;
+    text-align: center;
+    color: white;
+}

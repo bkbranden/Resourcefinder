@@ -6,6 +6,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.views.decorators.csrf import csrf_exempt
 
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from absurdvacations.settings import MAILJET_API_KEY, MAILJET_API_SECRET
 
 from mailjet_rest import Client
@@ -13,7 +14,6 @@ mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3')
 
 import json
 from django.core import serializers
-
 
 
 def index(request):

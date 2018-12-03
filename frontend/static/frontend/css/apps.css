@@ -3,6 +3,8 @@
     width: 90%;
 }
 
+.modalview {
+}
 
 .gif-modal {
     left: 50%;
@@ -34,6 +36,8 @@
 }
 
 .modalwrapper{
+    color:#c51f5d;
+    font-family: 'Roboto', sans-serif;
     width:400px;
     height:300px;
     text-align:center;

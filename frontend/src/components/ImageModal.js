@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
+import { Line, Circle } from 'rc-progress';
 
 const ImageModal = (props) => {
     if(!props.selected){
@@ -7,19 +8,24 @@ const ImageModal = (props) => {
     }
     return (
             <section>
-            <Modal 
-                visible={props.isOpen}
-                width="800"
-                height="600"
-                effect="fadeInUp"
-                onClickAway={() => props.onRequestClose()}
-            >
-                <div className="modalwrapper">
-                    {props.selected}
-                    <p>{props.info.fields.description}</p>
-                    <button onClick={() => props.onRequestClose()}>Close</button>
-                </div>
-            </Modal>
+                <Modal
+                    portalClassName="modalview"
+                    visible={props.isOpen}
+                    width="800"
+                    height="600"
+                    effect="fadeInUp"
+                    onClickAway={() => props.onRequestClose()}
+                >
+                    <div className="modalwrapper">
+                        {props.selected}
+                        <h2>{props.info.fields.description}</h2>
+                        <h3>{props.info.fields.percent_full}%</h3>
+                        <Line percent={props.info.fields.percent_full} strokeWidth="3" strokeColor="#c51f5d"/>
+                        <button onClick={() => props.onRequestClose()}>Close</button>
+                    </div>
+                </Modal>
+                
+            
             </section>
             
     )

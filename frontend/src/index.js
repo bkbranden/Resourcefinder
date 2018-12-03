@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import SearchBar from './components/SearchBar';
 import ImageList from './components/ImageList';
 import ImageModal from './components/ImageModal';
-import Resources from './components/Resources';
-import ResourcesModal from './components/ResourcesModal';
 import request from 'superagent';
 import '../static/frontend/css/apps.css';
+import WeatherApp from './components/WeatherApp';
+
+
+
 // import '../static/frontend/css/styles.css';
 // import Main from './components/App';
-
 // ReactDOM.render(<Main />, document.getElementById('root'));
 
 class App extends React.Component { 
@@ -44,6 +45,7 @@ class App extends React.Component {
 
     openModal(image){
         let stringtoint = parseInt(image.key, 10);
+        console.log(stringtoint)
         let temp = this.state.info[stringtoint -1]
         this.setState({
             isOpen: true,
@@ -107,13 +109,8 @@ class App extends React.Component {
     render(){
         return (
             <div>
+                <WeatherApp />
                 <SearchBar onTermChange={term => this.handleTermChange(term)} />
-                 {/* <Resources pictures={this.state.pictures} */}
-                        {/* /> */}
-                {/* <ResourcesModal isOpen={this.state.isOpen}
-                                selected={this.state.selected}
-                                onRequestClose={() => this.closeModal()}
-                                /> */}
                 <ImageList images = {this.state.pictures} 
                            onImageSelect={selected => this.openModal(selected) } />
                 <ImageModal isOpen={this.state.isOpen}
