@@ -56,7 +56,7 @@ class WeatherApp extends Component {
 
         if (hasLatLng || hasCityOrZipcode) {
             this.fetchWeatherForecast(hasLatLng).then(forecastData => {
-                console.log('Forecast Data:', forecastData);
+                // console.log('Forecast Data:', forecastData);
                 // Extract component specific data...
                 const navbarData = this.extractDataForNavbar(forecastData);
                 const todayComponentData = this.extractDataForTodayComponent(forecastData);

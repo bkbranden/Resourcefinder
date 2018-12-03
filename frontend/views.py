@@ -54,7 +54,7 @@ def logincheck(request):
             return HttpResponseRedirect('/')
     else:
         return render(request, 'frontend/index.html')
-
+@csrf_exempt
 def view_map(request):
     libraries_json = serializers.serialize('json', Location.objects.all())
     getvalues = Location.objects.all()

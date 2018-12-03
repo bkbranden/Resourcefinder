@@ -40,7 +40,6 @@ class App extends React.Component {
             let temp = jsondata.map((pic) => pic);
             this.setState({pictures: pictures});
             this.setState({info: temp});
-            console.log(temp);
         })
     }
 
