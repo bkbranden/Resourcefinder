@@ -103,6 +103,7 @@
                         <div class="sidenav">
                             <div class="spacing"></div>
                             <button class="accordion" id="homepage"> Homepage</button>
+                            {% if user.is_authenticated %}
                             <form action="{% url 'update' %}" method="POST">
                                 {% csrf_token %}
                                 <div id = "info">
@@ -111,8 +112,15 @@
                                     <p id="out" style="visibility:hidden;"></p>
                                 </div>
                             </form>
-                            
-                            
+                            {% else %}
+                                <form action="{% url 'update' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div id = "info">
+                                        <h2> Please log in to view location details! </h2>
+                                    </div>
+
+                                </form>
+                            {% endif %}
                             <!-- Issac: This section does not work. Only the word "Percentage Full" shows-->
                             <script>
                                 
