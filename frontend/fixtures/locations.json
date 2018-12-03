@@ -302,7 +302,7 @@
         "model": "frontend.location",
         "pk": 25,
         "fields": {
-            "location_name": "ClaudeMooreHealthSciencesLibrary",
+            "location_name": "claudemoorehealthscienceslibrary",
             "iconsize": "50 50",
             "coordinates": "-78.501214 38.031995",
             "title": "Claude Moore Health Sciences Library",
