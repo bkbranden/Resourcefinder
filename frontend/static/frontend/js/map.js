@@ -15,17 +15,20 @@ function changeRef(x){
 var doOnce = false;
 var card = "<div class='card' style='width: 18rem;'> \n <img class='card-img-top'  alt='Card image cap'> \n<div class='card-body'>\n<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n</div>\n</div>"
 var startvalue;
-var locname
+var locname;
+var descr
 function showDetail(x){ 
-        console.log(x);
-        console.log("werwerw")
+        console.log(x)
+        console.log("werwe")
         geojson.forEach(function(element){
             if(element.fields.location_name == x){
                 startvalue = element.fields.percent_full
                 locname = x
+                descr = element.fields.description
+                
             }
-            console.log(element.fields.location_name);
         });
+        console.log(locname)
         if(doOnce == false){
         var slider = document.getElementById("myRange")
         slider.setAttribute("value", startvalue)
@@ -42,10 +45,12 @@ function showDetail(x){
         out.innerHTML = slider.defaultValue;
         var overalldiv = document.createElement('div')
         var test = document.createElement("h1")
-        test.innerHTML = "TEST"
+        test.setAttribute('id', 'name');
+        test.innerHTML = locname
 
         var cardele = document.createElement('div')
-        cardele.innerHTML = card
+        cardele.setAttribute('id','desc')
+        cardele.innerHTML = "<div class='card' style='width: 18rem;'> \n <img class='card-img-top' id='imgchoose' alt='Card image cap'> \n<div class='card-body'>\n<p class='card-text'>" + descr + "</p>\n</div>\n</div>"
         
 
         overalldiv.appendChild(test)
@@ -56,124 +61,18 @@ function showDetail(x){
         overalldiv.style = "margin-top: 4cm;";
 
         document.getElementById('info').appendChild(overalldiv)
-        var imgchoose = document.getElementsByClassName('card-img-top')[0]
-        if(x == "Clemons"){
-            imgchoose.src = "../../static/frontend/images/Clemons.jpg"
-        }
-        if(x == "alderman"){
-            imgchoose.src = "../../static/frontend/images/alderman.jpg"
-        }
-        if(x == "clark"){
-            imgchoose.src = "../../static/frontend/images/clark.jpg"
-        }
-        if(x == "afc"){
-            imgchoose.src = "../../static/frontend/images/afc.jpg"
-        }
-        if(x == "roots"){
-            imgchoose.src = "../../static/frontend/images/roots.jpg"
-        }
-        if(x == "bodos"){
-            imgchoose.src = "../../static/frontend/images/bodos.jpg"
-        }
-        if(x == "newcomb"){
-            imgchoose.src = "../../static/frontend/images/newcomb.jpg"
-        }
-        if(x == "grit"){
-            imgchoose.src = "../../static/frontend/images/grit.jpg"
-        }
-        if(x == "ohill"){
-            imgchoose.src = "../../static/frontend/images/ohill.jpg"
-        }
-        if(x == "argoTea"){
-            imgchoose.src = "../../static/frontend/images/argoTea.jpg"
-        }
-        if(x == "starbucks"){
-            imgchoose.src = "../../static/frontend/images/starbucks.jpg"
-        }
-        if(x == "slaughter"){
-            imgchoose.src = "../../static/frontend/images/slaughter.jpg"
-        }
-        if(x == "mem"){
-            imgchoose.src = "../../static/frontend/images/mem.jpg"
-        }
-        if(x == "northGrounds"){
-            imgchoose.src = "../../static/frontend/images/northGrounds.jpg"
-        }
-        if(x == "runk"){
-           imgchoose.src = "../../static/frontend/images/runk.jpg"
-        }
-        if (x == "1515") {
-            imgchoose.src = "../../static/frontend/images/1515.jpg"
-        }
-        if (x == "claudemoorehealthscienceslibrary") {
-            imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
-        }
-        if (x == "dardenschoolofbusiness") {
-            imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
-        }
-        if (x == "daviscommons") {
-            imgchoose.src = "../../static/frontend/images/daviscommons.jpg"
-        }
-        if (x == "lawn") {
-            imgchoose.src = "../../static/frontend/images/lawn.jpg"
-        }
-        if (x == "mcintireschoolofcommerce") {
-            imgchoose.src = "../../static/frontend/images/mcintireschoolofcommerce.jpg"
-        }
-        if (x == "nauhall") {
-            imgchoose.src = "../../static/frontend/images/nauhall.jpg"
-        }
-        if (x == "olssonlabs") {
-            imgchoose.src = "../../static/frontend/images/olssonlabs.jpg"
-        }
-        if (x == "risingroll") {
-            imgchoose.src = "../../static/frontend/images/risingroll.jpg"
-        }
-        if (x == "thortonstacks") {
-            imgchoose.src = "../../static/frontend/images/thortonstacks.jpg"
-        }
-        if (x == "universityofvirginiaschooloflaw") {
-            imgchoose.src = "../../static/frontend/images/universityofvirginiaschooloflaw.jpg"
-}
-
-        var ret = document.createElement('button');
-        ret.setAttribute('class', 'accordion');
-        ret.innerHTML = "go back";
-        ret.addEventListener('click', removeDetails);
-
-        
-        var submit = document.createElement('input')
-        submit.setAttribute('type', 'submit')
-        submit.setAttribute('value', 'Submit Occupancy!')
-
-        var inputname = document.getElementById('location')
-        inputname.setAttribute('type', 'hidden')
-        inputname.setAttribute('value', locname)
-        inputname.setAttribute('name', 'location')
-        inputname.style="visiblity:hidden;";
-
-
-
-
-        overalldiv.appendChild(ret)
-        overalldiv.appendChild(submit)
-        overalldiv.appendChild(inputname)
-
-        doOnce = true
-    }
-    else{
-        var imgchoose = document.getElementsByClassName('card-img-top')[0]
+        var imgchoose = document.getElementById('imgchoose');
         if(x == "Clemons"){
             imgchoose.src = "../../static/frontend/images/Clemons.jpg"
         }
         if(x == "Alderman"){
-            imgchoose.src = "../../static/frontend/images/Alderman.jpg"
+            imgchoose.src = "../../static/frontend/images/alderman.jpg"
         }
         if(x == "Clark"){
-            imgchoose.src = "../../static/frontend/images/Clark.jpg"
+            imgchoose.src = "../../static/frontend/images/clark.jpg"
         }
         if(x == "AFC"){
-            imgchoose.src = "../../static/frontend/images/AFC.jpg"
+            imgchoose.src = "../../static/frontend/images/afc.jpg"
         }
         if(x == "roots"){
             imgchoose.src = "../../static/frontend/images/roots.jpg"
@@ -214,7 +113,7 @@ function showDetail(x){
         if (x == "ClaudeMooreHealthSciencesLibrary") {
             imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
         }
-        if (x == "DardenSchoolofBusiness") {
+        if (x == "dardenschoolofbusiness") {
             imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
         }
         if (x == "DavisCommons") {
@@ -235,10 +134,121 @@ function showDetail(x){
         if (x == "RisingRoll") {
             imgchoose.src = "../../static/frontend/images/risingroll.jpg"
         }
-        if (x == "ThortonStacks") {
+        if (x == "thortonstacks") {
             imgchoose.src = "../../static/frontend/images/thortonstacks.jpg"
         }
-        if (x == "UniversityofVirginiaSchoolofLaw") {
+        if (x == "universityofvirginiaschooloflaw") {
+            imgchoose.src = "../../static/frontend/images/universityofvirginiaschooloflaw.jpg"
+}
+
+        var ret = document.createElement('button');
+        ret.setAttribute('class', 'accordion');
+        ret.innerHTML = "go back";
+        ret.addEventListener('click', removeDetails);
+
+        
+        var submit = document.createElement('input')
+        submit.setAttribute('type', 'submit')
+        submit.setAttribute('value', 'Submit Occupancy!')
+
+        var inputname = document.getElementById('location')
+        inputname.setAttribute('type', 'hidden')
+        inputname.setAttribute('value', locname)
+        inputname.setAttribute('name', 'location')
+        inputname.style="visiblity:hidden;";
+
+
+
+
+        overalldiv.appendChild(ret)
+        overalldiv.appendChild(submit)
+        overalldiv.appendChild(inputname)
+
+        doOnce = true
+    }
+    else{
+        var cardele = document.getElementById('desc');
+        cardele.innerHTML = "<div class='card' style='width: 18rem;'> \n <img class='card-img-top'  alt='Card image cap'> \n<div class='card-body'>\n<p class='card-text'>" + descr + "</p>\n</div>\n</div>"
+        var test = document.getElementById("name")
+        test.setAttribute('id', 'name');
+        test.innerHTML = locname
+        var imgchoose = document.getElementsByClassName('card-img-top')[0]
+        if(x == "Clemons"){
+            imgchoose.src = "../../static/frontend/images/Clemons.jpg"
+        }
+        if(x == "Alderman"){
+            imgchoose.src = "../../static/frontend/images/alderman.jpg"
+        }
+        if(x == "Clark"){
+            imgchoose.src = "../../static/frontend/images/clark.jpg"
+        }
+        if(x == "AFC"){
+            imgchoose.src = "../../static/frontend/images/afc.jpg"
+        }
+        if(x == "roots"){
+            imgchoose.src = "../../static/frontend/images/roots.jpg"
+        }
+        if(x == "bodos"){
+            imgchoose.src = "../../static/frontend/images/bodos.jpg"
+        }
+        if(x == "newcomb"){
+            imgchoose.src = "../../static/frontend/images/newcomb.jpg"
+        }
+        if(x == "grit"){
+            imgchoose.src = "../../static/frontend/images/grit.jpg"
+        }
+        if(x == "ohill"){
+            imgchoose.src = "../../static/frontend/images/ohill.jpg"
+        }
+        if(x == "argoTea"){
+            imgchoose.src = "../../static/frontend/images/argoTea.jpg"
+        }
+        if(x == "starbucks"){
+            imgchoose.src = "../../static/frontend/images/starbucks.jpg"
+        }
+        if(x == "slaughter"){
+            imgchoose.src = "../../static/frontend/images/slaughter.jpg"
+        }
+        if(x == "mem"){
+            imgchoose.src = "../../static/frontend/images/mem.jpg"
+        }
+        if(x == "northGrounds"){
+            imgchoose.src = "../../static/frontend/images/northGrounds.jpg"
+        }
+        if(x == "runk"){
+           imgchoose.src = "../../static/frontend/images/runk.jpg"
+        }
+        if (x == "1515") {
+            imgchoose.src = "../../static/frontend/images/1515.jpg"
+        }
+        if (x == "ClaudeMooreHealthSciencesLibrary") {
+            imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
+        }
+        if (x == "dardenschoolofbusiness") {
+            imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
+        }
+        if (x == "DavisCommons") {
+            imgchoose.src = "../../static/frontend/images/daviscommons.jpg"
+        }
+        if (x == "Lawn") {
+            imgchoose.src = "../../static/frontend/images/lawn.jpg"
+        }
+        if (x == "McIntireSchoolofCommerce") {
+            imgchoose.src = "../../static/frontend/images/mcintireschoolofcommerce.jpg"
+        }
+        if (x == "NauHall") {
+            imgchoose.src = "../../static/frontend/images/nauhall.jpg"
+        }
+        if (x == "OlssonLabs") {
+            imgchoose.src = "../../static/frontend/images/olssonlabs.jpg"
+        }
+        if (x == "RisingRoll") {
+            imgchoose.src = "../../static/frontend/images/risingroll.jpg"
+        }
+        if (x == "thortonstacks") {
+            imgchoose.src = "../../static/frontend/images/thortonstacks.jpg"
+        }
+        if (x == "universityofvirginiaschooloflaw") {
             imgchoose.src = "../../static/frontend/images/universityofvirginiaschooloflaw.jpg"
 }
         var slider = document.getElementById("myRange")
