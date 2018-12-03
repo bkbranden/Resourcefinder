@@ -146,7 +146,7 @@
         "fields": {
             "location_name": "slaughter",
             "iconsize": "50 50",
-            "coordinates": "-78.517883 38.034869",
+            "coordinates": "-78.517604 38.034939",
             "title": "Slaughter Recreation Center",
             "description": "Basketball, weight-room, rock climbing",
             "percent_full": 0
@@ -159,7 +159,7 @@
         "fields": {
             "location_name": "mem",
             "iconsize": "50 50",
-            "coordinates": "-78.517883 38.034869",
+            "coordinates": "-78.507165 38.037409",
             "title": "Memorial Gymnasium",
             "description": "Basketball, boxing, weight-room",
             "percent_full": 0
@@ -172,7 +172,7 @@
         "fields": {
             "location_name": "northGrounds",
             "iconsize": "50 50",
-            "coordinates": "-78.515892 38.05232",
+            "coordinates": "-78.513022 38.051167",
             "title": "North Grounds Recreation Center",
             "description": "Basketball, aquatics, weight-room, racketball",
             "percent_full": 0
@@ -232,7 +232,7 @@
         "fields": {
             "location_name": "olssonlabs",
             "iconsize": "50 50",
-            "coordinates": "-78.523940 38.020780",
+            "coordinates": "-78.510716 38.032083",
             "title": "Olsson Labs",
             "description": "Study Area/ Office Hours",
             "percent_full": 0
@@ -280,8 +280,8 @@
         "fields": {
             "location_name": "dardenschoolofbusiness",
             "iconsize": "50 50",
-            "coordinates": "-78.514510 38.052590",
-            "title": "Darden School of Busines",
+            "coordinates": "-78.514298 38.052497",
+            "title": "Darden School of Business",
             "description": "Study Area/Classrooms",
             "percent_full": 0
         }
@@ -292,7 +292,7 @@
         "fields": {
             "location_name": "universityofvirginiaschooloflaw",
             "iconsize": "50 50",
-            "coordinates": "-78.509330 38.053050",
+            "coordinates": "-78.509177 38.052906",
             "title": "University of Virginia School of Law",
             "description": "Study Area/Classrooms",
             "percent_full": 0

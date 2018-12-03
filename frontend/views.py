@@ -54,6 +54,7 @@ def logincheck(request):
             return HttpResponseRedirect('/')
     else:
         return render(request, 'frontend/index.html')
+
 @csrf_exempt
 def view_map(request):
     libraries_json = serializers.serialize('json', Location.objects.all())
@@ -61,6 +62,7 @@ def view_map(request):
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
     return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : libraries_json, 'locationvalues': getvalues})
 
+@csrf_exempt
 def updateOccupancy(request):
     libraries_json = serializers.serialize('json', Location.objects.all())
     getvalues = Location.objects.all()
