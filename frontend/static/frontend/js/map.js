@@ -23,6 +23,7 @@ function showDetail(x){
                 locname = x
             }
         });
+        console.log(element);
         if(doOnce == false){
         var slider = document.getElementById("myRange")
         slider.setAttribute("value", startvalue)
@@ -58,13 +59,13 @@ function showDetail(x){
             imgchoose.src = "../../static/frontend/images/Clemons.jpg"
         }
         if(x == "Alderman"){
-            imgchoose.src = "../../static/frontend/images/Alderman.jpg"
+            imgchoose.src = "../../static/frontend/images/alderman.jpg"
         }
         if(x == "Clark"){
-            imgchoose.src = "../../static/frontend/images/Clark.jpg"
+            imgchoose.src = "../../static/frontend/images/clark.jpg"
         }
         if(x == "AFC"){
-            imgchoose.src = "../../static/frontend/images/AFC.jpg"
+            imgchoose.src = "../../static/frontend/images/afc.jpg"
         }
         if(x == "roots"){
             imgchoose.src = "../../static/frontend/images/roots.jpg"
@@ -103,7 +104,7 @@ function showDetail(x){
             imgchoose.src = "../../static/frontend/images/1515.jpg"
         }
         if (x == "ClaudeMooreHealthSciencesLibrary") {
-            imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
+            imgchoose.src = "../../static/frontend/images/ClaudeMooreHealthSciencesLibrary.jpg"
         }
         if (x == "DardenSchoolofBusiness") {
             imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
