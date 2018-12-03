@@ -14,7 +14,7 @@ class Student(AbstractUser):
 	student_computing_id = models.CharField(max_length=200)
 	student_location = models.CharField(max_length=200, default='')
 
-	friends = models.ManyToManyField("Student")
+	# friends = models.ManyToManyField("Student")
 
 	def __str__(self):
 		return self.student_name
