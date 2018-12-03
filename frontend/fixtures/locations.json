@@ -290,7 +290,7 @@
         "model": "frontend.location",
         "pk": 24,
         "fields": {
-            "location_name": "universityofvirginiaSchooloflaw",
+            "location_name": "universityofvirginiaschooloflaw",
             "iconsize": "50 50",
             "coordinates": "-78.509330 38.053050",
             "title": "University of Virginia School of Law",
