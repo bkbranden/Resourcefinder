@@ -3,7 +3,7 @@
         "model": "frontend.location",
         "pk": 1,
         "fields": {
-            "location_name": "Alderman",
+            "location_name": "alderman",
             "iconsize": "50 50",
             "coordinates": "-78.5054 38.0365",
             "title": "Alderman Library",
@@ -27,7 +27,7 @@
         "model": "frontend.location",
         "pk": 3,
         "fields": {
-            "location_name": "Clark",
+            "location_name": "clark",
             "iconsize": "50 50",
             "coordinates": "-78.5078 38.0330",
             "title": "Clark Library",
@@ -40,7 +40,7 @@
         "model": "frontend.location",
         "pk": 4,
         "fields": {
-            "location_name": "AFC",
+            "location_name": "afc",
             "iconsize": "50 50",
             "coordinates": "-78.513510 38.032870",
             "title": "Aquatic and Fitness Center",
@@ -194,7 +194,7 @@
         "model": "frontend.location",
         "pk": 16,
         "fields": {
-            "location_name": "RisingRoll",
+            "location_name": "risingroll",
             "iconsize": "50 50",
             "coordinates": "-78.504890 38.032916",
             "title": "Rising Roll",
@@ -206,7 +206,7 @@
         "model": "frontend.location",
         "pk": 17,
         "fields": {
-            "location_name": "DavisCommons",
+            "location_name": "daviscommons",
             "iconsize": "50 50",
             "coordinates": "-78.510826 38.031619",
             "title": "Davis Commons (Rice Hall)",
@@ -218,7 +218,7 @@
         "model": "frontend.location",
         "pk": 18,
         "fields": {
-            "location_name": "ThortonStacks",
+            "location_name": "thortonstacks",
             "iconsize": "50 50",
             "coordinates": "-78.704070 38.016020",
             "title": "Thorton Stacks (Thorton Hall)",
@@ -230,7 +230,7 @@
         "model": "frontend.location",
         "pk": 19,
         "fields": {
-            "location_name": "OlssonLabs",
+            "location_name": "olssonlabs",
             "iconsize": "50 50",
             "coordinates": "-78.523940 38.020780",
             "title": "Olsson Labs",
@@ -242,7 +242,7 @@
         "model": "frontend.location",
         "pk": 20,
         "fields": {
-            "location_name": "NauHall",
+            "location_name": "nauhall",
             "iconsize": "50 50",
             "coordinates": "-78.505130 38.031490",
             "title": "Nau Hall",
@@ -254,7 +254,7 @@
         "model": "frontend.location",
         "pk": 21,
         "fields": {
-            "location_name": "McIntireSchoolofCommerce",
+            "location_name": "mcintireschoolofcommerce",
             "iconsize": "50 50",
             "coordinates": "-78.503685 38.032869",
             "title": "McIntire School of Commerce",
@@ -266,7 +266,7 @@
         "model": "frontend.location",
         "pk": 22,
         "fields": {
-            "location_name": "Lawn",
+            "location_name": "lawn",
             "iconsize": "50 50",
             "coordinates": "-78.504482 38.033567",
             "title": "Lawn",
@@ -278,7 +278,7 @@
         "model": "frontend.location",
         "pk": 23,
         "fields": {
-            "location_name": "DardenSchoolofBusiness",
+            "location_name": "dardenschoolofbusiness",
             "iconsize": "50 50",
             "coordinates": "-78.514510 38.052590",
             "title": "Darden School of Busines",
@@ -290,7 +290,7 @@
         "model": "frontend.location",
         "pk": 24,
         "fields": {
-            "location_name": "UniversityofVirginiaSchoolofLaw",
+            "location_name": "universityofvirginiaSchooloflaw",
             "iconsize": "50 50",
             "coordinates": "-78.509330 38.053050",
             "title": "University of Virginia School of Law",
