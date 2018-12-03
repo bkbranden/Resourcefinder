@@ -60,13 +60,13 @@ function showDetail(x){
         if(x == "Clemons"){
             imgchoose.src = "../../static/frontend/images/Clemons.jpg"
         }
-        if(x == "Alderman"){
+        if(x == "alderman"){
             imgchoose.src = "../../static/frontend/images/alderman.jpg"
         }
-        if(x == "Clark"){
+        if(x == "clark"){
             imgchoose.src = "../../static/frontend/images/clark.jpg"
         }
-        if(x == "AFC"){
+        if(x == "afc"){
             imgchoose.src = "../../static/frontend/images/afc.jpg"
         }
         if(x == "roots"){
@@ -105,34 +105,34 @@ function showDetail(x){
         if (x == "1515") {
             imgchoose.src = "../../static/frontend/images/1515.jpg"
         }
-        if (x == "ClaudeMooreHealthSciencesLibrary") {
-            imgchoose.src = "../../static/frontend/images/ClaudeMooreHealthSciencesLibrary.jpg"
+        if (x == "claudemoorehealthscienceslibrary") {
+            imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
         }
-        if (x == "DardenSchoolofBusiness") {
+        if (x == "dardenschoolofbusiness") {
             imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
         }
-        if (x == "DavisCommons") {
+        if (x == "daviscommons") {
             imgchoose.src = "../../static/frontend/images/daviscommons.jpg"
         }
-        if (x == "Lawn") {
+        if (x == "lawn") {
             imgchoose.src = "../../static/frontend/images/lawn.jpg"
         }
-        if (x == "McIntireSchoolofCommerce") {
+        if (x == "mcintireschoolofcommerce") {
             imgchoose.src = "../../static/frontend/images/mcintireschoolofcommerce.jpg"
         }
-        if (x == "NauHall") {
+        if (x == "nauhall") {
             imgchoose.src = "../../static/frontend/images/nauhall.jpg"
         }
-        if (x == "OlssonLabs") {
+        if (x == "olssonlabs") {
             imgchoose.src = "../../static/frontend/images/olssonlabs.jpg"
         }
-        if (x == "RisingRoll") {
+        if (x == "risingroll") {
             imgchoose.src = "../../static/frontend/images/risingroll.jpg"
         }
-        if (x == "ThortonStacks") {
+        if (x == "thortonstacks") {
             imgchoose.src = "../../static/frontend/images/thortonstacks.jpg"
         }
-        if (x == "UniversityofVirginiaSchoolofLaw") {
+        if (x == "universityofvirginiaschooloflaw") {
             imgchoose.src = "../../static/frontend/images/universityofvirginiaschooloflaw.jpg"
 }
 
