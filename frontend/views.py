@@ -81,7 +81,7 @@ def updateOccupancy(request):
 def viewusers(request):
     students = Student.objects.all()
     return render(request, 'frontend/viewusers.html', {'students': students})
-
+    
 def signpost(request):
     if(request.method == "POST"):
         username = request.POST.get("username")
