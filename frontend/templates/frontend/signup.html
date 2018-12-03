@@ -33,9 +33,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="password" placeholder="Password"/>
+                                <input type="password" name="password" id="password" placeholder="Password" onkeyup="checkPassword()"/>
+                                <span id="errormessage" style="color: red; position: fixed; left:10cm; top: 10.5cm;"></span>
                             </div>
                             <div class="form-group">
+                                <span id="break"></span>
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
                             </div>
@@ -49,6 +51,7 @@
                         </form>
                     </div>
                     <p> Already have an account? Sign in <a href="{% url 'checkin' %}">here</a></p>
+                    
                     <li>
                             {% if message %}
                                 <p style="text-align: left;font-size: 14px;">Warning：<span style="color: red">{{ message }}</span></p>
@@ -68,5 +71,6 @@
     <!-- JS -->
     <script src="../../static/frontend/vendor/jquery/jquery.min.js"></script>
     <script src="../../static/frontend/js/main2.js"></script>
+    <script src="../../static/frontend/js/passwordcheck.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

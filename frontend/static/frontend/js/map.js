@@ -55,14 +55,83 @@ function showDetail(x){
         document.getElementById('info').appendChild(overalldiv)
         var imgchoose = document.getElementsByClassName('card-img-top')[0]
         if(x == "Clemons"){
-            imgchoose.src = "../../static/frontend/images/clem.jpg"
+            imgchoose.src = "../../static/frontend/images/Clemons.jpg"
         }
         if(x == "Alderman"){
-            imgchoose.src = "../../static/frontend/images/alderman.jpg"
+            imgchoose.src = "../../static/frontend/images/Alderman.jpg"
         }
         if(x == "Clark"){
-            imgchoose.src = "../../static/frontend/images/clark.jpg"
+            imgchoose.src = "../../static/frontend/images/Clark.jpg"
         }
+        if(x == "AFC"){
+            imgchoose.src = "../../static/frontend/images/AFC.jpg"
+        }
+        if(x == "roots"){
+            imgchoose.src = "../../static/frontend/images/roots.jpg"
+        }
+        if(x == "bodos"){
+            imgchoose.src = "../../static/frontend/images/bodos.jpg"
+        }
+        if(x == "newcomb"){
+            imgchoose.src = "../../static/frontend/images/newcomb.jpg"
+        }
+        if(x == "grit"){
+            imgchoose.src = "../../static/frontend/images/grit.jpg"
+        }
+        if(x == "ohill"){
+            imgchoose.src = "../../static/frontend/images/ohill.jpg"
+        }
+        if(x == "argoTea"){
+            imgchoose.src = "../../static/frontend/images/argoTea.jpg"
+        }
+        if(x == "starbucks"){
+            imgchoose.src = "../../static/frontend/images/starbucks.jpg"
+        }
+        if(x == "slaughter"){
+            imgchoose.src = "../../static/frontend/images/slaughter.jpg"
+        }
+        if(x == "mem"){
+            imgchoose.src = "../../static/frontend/images/mem.jpg"
+        }
+        if(x == "northGrounds"){
+            imgchoose.src = "../../static/frontend/images/northGrounds.jpg"
+        }
+        if(x == "runk"){
+           imgchoose.src = "../../static/frontend/images/runk.jpg"
+        }
+        if (x == "1515") {
+            imgchoose.src = "../../static/frontend/images/1515.jpg"
+        }
+        if (x == "ClaudeMooreHealthSciencesLibrary") {
+            imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
+        }
+        if (x == "DardenSchoolofBusiness") {
+            imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
+        }
+        if (x == "DavisCommons") {
+            imgchoose.src = "../../static/frontend/images/daviscommons.jpg"
+        }
+        if (x == "Lawn") {
+            imgchoose.src = "../../static/frontend/images/lawn.jpg"
+        }
+        if (x == "McIntireSchoolofCommerce") {
+            imgchoose.src = "../../static/frontend/images/mcintireschoolofcommerce.jpg"
+        }
+        if (x == "NauHall") {
+            imgchoose.src = "../../static/frontend/images/nauhall.jpg"
+        }
+        if (x == "OlssonLabs") {
+            imgchoose.src = "../../static/frontend/images/olssonlabs.jpg"
+        }
+        if (x == "RisingRoll") {
+            imgchoose.src = "../../static/frontend/images/risingroll.jpg"
+        }
+        if (x == "ThortonStacks") {
+            imgchoose.src = "../../static/frontend/images/thortonstacks.jpg"
+        }
+        if (x == "UniversityofVirginiaSchoolofLaw") {
+            imgchoose.src = "../../static/frontend/images/universityofvirginiaschooloflaw.jpg"
+}
 
         var ret = document.createElement('button');
         ret.setAttribute('class', 'accordion');
@@ -92,14 +161,83 @@ function showDetail(x){
     else{
         var imgchoose = document.getElementsByClassName('card-img-top')[0]
         if(x == "Clemons"){
-            imgchoose.src = "../../static/frontend/images/clem.jpg"
+            imgchoose.src = "../../static/frontend/images/Clemons.jpg"
         }
         if(x == "Alderman"){
-            imgchoose.src = "../../static/frontend/images/alderman.jpg"
+            imgchoose.src = "../../static/frontend/images/Alderman.jpg"
         }
         if(x == "Clark"){
-            imgchoose.src = "../../static/frontend/images/clark.jpg"
-        }   
+            imgchoose.src = "../../static/frontend/images/Clark.jpg"
+        }
+        if(x == "AFC"){
+            imgchoose.src = "../../static/frontend/images/AFC.jpg"
+        }
+        if(x == "roots"){
+            imgchoose.src = "../../static/frontend/images/roots.jpg"
+        }
+        if(x == "bodos"){
+            imgchoose.src = "../../static/frontend/images/bodos.jpg"
+        }
+        if(x == "newcomb"){
+            imgchoose.src = "../../static/frontend/images/newcomb.jpg"
+        }
+        if(x == "grit"){
+            imgchoose.src = "../../static/frontend/images/grit.jpg"
+        }
+        if(x == "ohill"){
+            imgchoose.src = "../../static/frontend/images/ohill.jpg"
+        }
+        if(x == "argoTea"){
+            imgchoose.src = "../../static/frontend/images/argoTea.jpg"
+        }
+        if(x == "starbucks"){
+            imgchoose.src = "../../static/frontend/images/starbucks.jpg"
+        }
+        if(x == "slaughter"){
+            imgchoose.src = "../../static/frontend/images/slaughter.jpg"
+        }
+        if(x == "mem"){
+            imgchoose.src = "../../static/frontend/images/mem.jpg"
+        }
+        if(x == "northGrounds"){
+            imgchoose.src = "../../static/frontend/images/northGrounds.jpg"
+        }
+        if(x == "runk"){
+           imgchoose.src = "../../static/frontend/images/runk.jpg"
+        }
+        if (x == "1515") {
+            imgchoose.src = "../../static/frontend/images/1515.jpg"
+        }
+        if (x == "ClaudeMooreHealthSciencesLibrary") {
+            imgchoose.src = "../../static/frontend/images/claudemoorehealthscienceslibrary.jpg"
+        }
+        if (x == "DardenSchoolofBusiness") {
+            imgchoose.src = "../../static/frontend/images/dardenschoolofbusiness.jpg"
+        }
+        if (x == "DavisCommons") {
+            imgchoose.src = "../../static/frontend/images/daviscommons.jpg"
+        }
+        if (x == "Lawn") {
+            imgchoose.src = "../../static/frontend/images/lawn.jpg"
+        }
+        if (x == "McIntireSchoolofCommerce") {
+            imgchoose.src = "../../static/frontend/images/mcintireschoolofcommerce.jpg"
+        }
+        if (x == "NauHall") {
+            imgchoose.src = "../../static/frontend/images/nauhall.jpg"
+        }
+        if (x == "OlssonLabs") {
+            imgchoose.src = "../../static/frontend/images/olssonlabs.jpg"
+        }
+        if (x == "RisingRoll") {
+            imgchoose.src = "../../static/frontend/images/risingroll.jpg"
+        }
+        if (x == "ThortonStacks") {
+            imgchoose.src = "../../static/frontend/images/thortonstacks.jpg"
+        }
+        if (x == "UniversityofVirginiaSchoolofLaw") {
+            imgchoose.src = "../../static/frontend/images/universityofvirginiaschooloflaw.jpg"
+}
         var slider = document.getElementById("myRange")
 
         slider.setAttribute("value", startvalue)

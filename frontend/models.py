@@ -36,7 +36,7 @@ class Location(models.Model):
 	description=models.CharField(max_length=2000, default='')
 	percent_full=models.IntegerField(default=0)
 
-	occupancy_list = [(50, int(datetime.datetime.now().strftime("%H")))]  # occupancy_list should contain tuples in the form of (estimated occupancy, time subitted)
+	occupancy_list = []  # occupancy_list should contain tuples in the form of (estimated occupancy, time subitted)
 
 	def __str__(self):
 		return self.location_name
@@ -49,21 +49,15 @@ class Location(models.Model):
 	# Calculates average of all votes. Returns -1 if no votes
 	def get_percentage_full(self):
 		if len(self.occupancy_list) == 0:
-			return -1
+			return 0
 		percentage_full = 0
 		for x in self.occupancy_list:
-			percentage_full += x[0]
+			percentage_full += x
 		return percentage_full/len(self.occupancy_list)
 
 	# Estimation is the value given by the user when they are asked "How full is this space?"
 	def check_in(self, estimation):
-		timeobj = datetime.datetime.now()
-		hourTime = int(timeobj.strftime("%H"))
-		for i in self.occupancy_list:
-			if (abs(int(i[1] - hourTime)) > 2):
-				self.occupancy_list.remove(i)
-		estimate = (estimation, hourTime)
-		self.occupancy_list.append(estimate)
+		self.occupancy_list.append(estimation)
 
 	# Call this method every interval
 	def check_votes(self):

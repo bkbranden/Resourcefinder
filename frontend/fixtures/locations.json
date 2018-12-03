@@ -7,11 +7,10 @@
             "iconsize": "50 50",
             "coordinates": "-78.5054 38.0365",
             "title": "Alderman Library",
-            "description": "Description for this location",
-            "percent_full": 40
+            "description": "Library",
+            "percent_full": 0
         }
     },
-
     {
         "model": "frontend.location",
         "pk": 2,
@@ -20,11 +19,10 @@
             "iconsize": "50 50",
             "coordinates": "-78.5059886 38.0363712",
             "title": "Clemons Library",
-            "description": "Description for this location",
-            "percent_full": 50
+            "description": "Library and Robinson Media Center",
+            "percent_full": 0
         }
     },
-
     {
         "model": "frontend.location",
         "pk": 3,
@@ -33,8 +31,297 @@
             "iconsize": "50 50",
             "coordinates": "-78.5078 38.0330",
             "title": "Clark Library",
-            "description": "Description for this location",
-            "percent_full": 60
+            "description": "Library",
+            "percent_full": 0
+        }
+    },
+
+    {
+        "model": "frontend.location",
+        "pk": 4,
+        "fields": {
+            "location_name": "AFC",
+            "iconsize": "50 50",
+            "coordinates": "-78.513510 38.032870",
+            "title": "Aquatic and Fitness Center",
+            "description": "Basketball, weight-room, aquatics",
+            "percent_full": 0
+        }
+    },
+
+     {
+        "model": "frontend.location",
+        "pk": 5,
+        "fields": {
+            "location_name": "roots",
+            "iconsize": "50 50",
+            "coordinates": "-78.499068 38.033899",
+            "title": "Roots",
+            "description": "Cozy, counter-serve diner with eco-chic decor offering create-your-own vegetarian bowls.",
+            "percent_full": 0
+        }
+    },
+
+    {
+        "model": "frontend.location",
+        "pk": 6,
+        "fields": {
+            "location_name": "bodos",
+            "iconsize": "50 50",
+            "coordinates": "-78.500921 38.035706",
+            "title": "Bodo's Bagel Bakery",
+            "description": "One of a local trio of New York-style bagel shops offering counter-serve breakfast & sandwiches.",
+            "percent_full": 0
+        }
+    },
+
+     {
+        "model": "frontend.location",
+        "pk": 7,
+        "fields": {
+            "location_name": "newcomb",
+            "iconsize": "50 50",
+            "coordinates": "-78.506639 38.035852",
+            "title": "Newcomb Dining Hall",
+            "description": "Dining Hall",
+            "percent_full": 0
+        }
+    },
+
+      {
+        "model": "frontend.location",
+        "pk": 8,
+        "fields": {
+            "location_name": "grit",
+            "iconsize": "50 50",
+            "coordinates": "-78.500122 38.036525",
+            "title": "Grit Coffee",
+            "description": "Coffee Shop",
+            "percent_full": 0
+        }
+    },
+
+       {
+        "model": "frontend.location",
+        "pk": 9,
+        "fields": {
+            "location_name": "ohill",
+            "iconsize": "50 50",
+            "coordinates": "-78.515063 38.034832",
+            "title": "Observatory Hill Dining Room",
+            "description": "Dining Hall",
+            "percent_full": 0
+        }
+    },
+
+       {
+        "model": "frontend.location",
+        "pk": 10,
+        "fields": {
+            "location_name": "argoTea",
+            "iconsize": "50 50",
+            "coordinates": "-78.511154 38.033538",
+            "title": "Argo Tea",
+            "description": "Tea and coffee shop",
+            "percent_full": 0
+        }
+    },
+
+        {
+        "model": "frontend.location",
+        "pk": 11,
+        "fields": {
+            "location_name": "starbucks",
+            "iconsize": "50 50",
+            "coordinates": "-78.500877 38.035538",
+            "title": "Starbucks Coffee (Corner)",
+            "description": "Coffee shop on the corner",
+            "percent_full": 0
+        }
+    },
+
+      {
+        "model": "frontend.location",
+        "pk": 12,
+        "fields": {
+            "location_name": "slaughter",
+            "iconsize": "50 50",
+            "coordinates": "-78.517883 38.034869",
+            "title": "Slaughter Recreation Center",
+            "description": "Basketball, weight-room, rock climbing",
+            "percent_full": 0
+        }
+    },
+
+     {
+        "model": "frontend.location",
+        "pk": 13,
+        "fields": {
+            "location_name": "mem",
+            "iconsize": "50 50",
+            "coordinates": "-78.517883 38.034869",
+            "title": "Memorial Gymnasium",
+            "description": "Basketball, boxing, weight-room",
+            "percent_full": 0
+        }
+    },
+
+    {
+        "model": "frontend.location",
+        "pk": 14,
+        "fields": {
+            "location_name": "northGrounds",
+            "iconsize": "50 50",
+            "coordinates": "-78.515892 38.05232",
+            "title": "North Grounds Recreation Center",
+            "description": "Basketball, aquatics, weight-room, racketball",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 15,
+        "fields": {
+            "location_name": "runk",
+            "iconsize": "50 50",
+            "coordinates": "-78.518842 38.02894",
+            "title": "Runk Dining Hall",
+            "description": "Dining hall",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 16,
+        "fields": {
+            "location_name": "RisingRoll",
+            "iconsize": "50 50",
+            "coordinates": "-78.504890 38.032916",
+            "title": "Rising Roll",
+            "description": "Eatery",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 17,
+        "fields": {
+            "location_name": "DavisCommons",
+            "iconsize": "50 50",
+            "coordinates": "-78.510826 38.031619",
+            "title": "Davis Commons (Rice Hall)",
+            "description": "Study Area",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 18,
+        "fields": {
+            "location_name": "ThortonStacks",
+            "iconsize": "50 50",
+            "coordinates": "-78.704070 38.016020",
+            "title": "Thorton Stacks (Thorton Hall)",
+            "description": "Study Area/ Office Hours",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 19,
+        "fields": {
+            "location_name": "OlssonLabs",
+            "iconsize": "50 50",
+            "coordinates": "-78.523940 38.020780",
+            "title": "Olsson Labs",
+            "description": "Study Area/ Office Hours",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 20,
+        "fields": {
+            "location_name": "NauHall",
+            "iconsize": "50 50",
+            "coordinates": "-78.505130 38.031490",
+            "title": "Nau Hall",
+            "description": "Study Area",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 21,
+        "fields": {
+            "location_name": "McIntireSchoolofCommerce",
+            "iconsize": "50 50",
+            "coordinates": "-78.503685 38.032869",
+            "title": "McIntire School of Commerce",
+            "description": "Study Area/ Classrooms",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 22,
+        "fields": {
+            "location_name": "Lawn",
+            "iconsize": "50 50",
+            "coordinates": "-78.504482 38.033567",
+            "title": "Lawn",
+            "description": "Study Area/Lounge",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 23,
+        "fields": {
+            "location_name": "DardenSchoolofBusiness",
+            "iconsize": "50 50",
+            "coordinates": "-78.514510 38.052590",
+            "title": "Darden School of Busines",
+            "description": "Study Area/Classrooms",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 24,
+        "fields": {
+            "location_name": "UniversityofVirginiaSchoolofLaw",
+            "iconsize": "50 50",
+            "coordinates": "-78.509330 38.053050",
+            "title": "University of Virginia School of Law",
+            "description": "Study Area/Classrooms",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 25,
+        "fields": {
+            "location_name": "ClaudeMooreHealthSciencesLibrary",
+            "iconsize": "50 50",
+            "coordinates": "-78.501214 38.031995",
+            "title": "Claude Moore Health Sciences Library",
+            "description": "Study Area/Classrooms",
+            "percent_full": 0
+        }
+    },
+    {
+        "model": "frontend.location",
+        "pk": 26,
+        "fields": {
+            "location_name": "1515",
+            "iconsize": "50 50",
+            "coordinates": "-78.501511 38.035992",
+            "title": "1515",
+            "description": "Study Area/Arcade",
+            "percent_full": 0
         }
     }
+
+
 ]

@@ -1,5 +1,8 @@
 var sending = new XMLHttpRequest();
 
+var upperCase = new RegExp('[A-Z]');
+var lowerCase = new RegExp('[a-z]');
+var numbers = new RegExp('[0-9]');
 
 
 $(document).ready(function(){
@@ -18,8 +21,19 @@ $(document).ready(function(){
           $("#footerText").val("They don't match");
         }
       }
+      else if(!($("#passOne").val().match(upperCase)) || !($("#passOne").val().match(numbers) || $("#passOne").val().length < 8)){
+        if($("#footer").hasClass("correct")){
+          $("#footer").removeClass("correct").addClass("incorrect");
+          $("#footerText").val("Password Incorrect");
+          $('#errormessage').html("Password must be of length 8 and include one uppercase and numbers")
+        }else{
+          $("#footerText").val("Password Incorrect");
+          $('#errormessage').html("Password must be of length 8 and include one uppercase and numbers")
+        }
+      }
       else if($("#footer").hasClass("incorrect"))
       {
+        $('#errormessage').html("")
         if(passOne == passTwo){
           $("#footer").removeClass("incorrect").addClass("correct");
           $("#footerText").val("Continue");
@@ -35,6 +49,7 @@ $(document).ready(function(){
         if(passOne != passTwo){
           $("#footer").removeClass("correct").addClass("incorrect");
           $("#footerText").val("They don't match");
+          
         } 
       }   
     }

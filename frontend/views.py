@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import Student, Location
 import json
 from django.core.serializers.json import DjangoJSONEncoder
-
+from django.views.decorators.csrf import csrf_exempt
 
 from django.contrib.auth import authenticate, login, logout
 from absurdvacations.settings import MAILJET_API_KEY, MAILJET_API_SECRET
@@ -24,8 +24,6 @@ def index(request):
 
     occupancies_json = json.dumps(library_occupancies)
     loaded_occupancies = json.loads(occupancies_json)
-    print(occupancies_json)
-    print(loaded_occupancies)
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
     return render(request, 'frontend/index.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : all_libraries, 'library_occupancies' : loaded_occupancies})
 
@@ -128,7 +126,7 @@ def sendEmail(request):
                 'FromEmail': 'bkbrandenkim97@gmail.com',
                 'FromName': 'Branden Kim',
                 'Subject': 'Testing Reset Password',
-                'Text-part': 'Click this link to reset your email! https://morning-wildwood-43683.herokuapp.com/changepassword',
+                'Text-part': 'Click this link to reset your email! https://absurdvacations.herokuapp.com/changepassword',
                 'Recipients': [
                                 {
                                     "Email": email
@@ -157,3 +155,13 @@ def changePassword(request):
 
 def changepass(request):
     return render(request, 'frontend/changepass.html')
+
+@csrf_exempt
+def listresource(request, search):
+    resources_json = serializers.serialize('json', Location.objects.filter(location_name__startswith = search))
+    return JsonResponse(resources_json, safe=False)
+
+@csrf_exempt
+def allresources(request):
+    resources_json = serializers.serialize('json', Location.objects.all())
+    return JsonResponse(resources_json, safe=False)

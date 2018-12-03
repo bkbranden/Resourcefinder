@@ -78,6 +78,46 @@ class TestCheckingMembers(TestCase):
 		s.time_out()
 		self.assertEqual(s.student_location, '')
 
+
+class TestStudentModel(TestCase):
+	def test_name(self):
+		s = Student(student_name="Thomas Jefferson", student_computing_id="itr9fc")
+		self.assertEqual(s.student_name, "Thomas Jefferson")
+	def test_computing_id(self):
+		s = Student(student_name="Thomas Jefferson", student_computing_id="tj9fc")
+		self.assertEqual(s.student_computing_id, "tj9fc")
+	def test_str_(self):
+		s = Student(student_name="Thomas Jefferson", student_computing_id="itr9fc")
+		self.assertEqual(s,s.student_name)
+class TestTemplates(TestCase):
+	def test_homepage(self):
+		response = self.client.get('/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map1(self):
+		response = self.client.get('/view_map/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map2(self):
+		response = self.client.get('/sign_in/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map3(self):
+		response = self.client.get('/logout/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map4(self):
+		response = self.client.get('/index/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map5(self):
+		response = self.client.get('/forgotpassword/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map6(self):
+		response = self.client.get('/forgotpassword/emailsend/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map7(self):
+		response = self.client.get('/changepassword/')
+		self.assertEqual(response.status_code, 200)
+	def test_view_map8(self):
+		response = self.client.get('/changepassword/change/')
+		self.assertEqual(response.status_code, 200)
+
 # #Tests login
 # class TestStudentLogin(TestCase):
 #    #Test if student has credentials, then direct them to page
