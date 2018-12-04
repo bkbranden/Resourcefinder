@@ -52,14 +52,11 @@
                     </div>
                     <p> Already have an account? Sign in <a href="{% url 'checkin' %}">here</a></p>
                     
-                    <li>
                             {% if message %}
-                                <p style="text-align: left;font-size: 14px;">Warning：<span style="color: red">{{ message }}</span></p>
+                                <p style="font-size: 16px;">Error：<span style="color: red">{{ message }}</span></p>
                             {% endif %}
-                      </li>
                     <div class="signup-image">
                         <figure><img src="../../static/frontend/imagesforlogin/signup-image.jpg" alt="sing up image"></figure>
-                        <a href= "{% url 'sign_in' %}" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>

@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'frontend.Student'
 
-LOGOUT_REDIRECT_URL = 'frontend/index.html'
+# LOGOUT_REDIRECT_URL = 'frontend/index.html'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

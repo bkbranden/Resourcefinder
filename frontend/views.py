@@ -14,8 +14,9 @@ mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3')
 
 import json
 from django.core import serializers
+import re
 
-
+@login_required(login_url='/')
 def index(request):
     all_libraries = Location.objects.all().order_by('location_name')
     library_occupancies = {}
@@ -31,6 +32,7 @@ def check_in(request):
 
     return render(request,'frontend/check_in.html')
 
+@login_required(login_url='/')
 def logout_view(request):
     logout(request)
     request.session.flush()
@@ -55,13 +57,14 @@ def logincheck(request):
     else:
         return render(request, 'frontend/index.html')
 
-@csrf_exempt
+@login_required(login_url='/')
 def view_map(request):
     libraries_json = serializers.serialize('json', Location.objects.all())
     getvalues = Location.objects.all()
     mapbox_access_token = 'pk.eyJ1IjoiYWJzdXJkdmFjYXRpb24iLCJhIjoiY2puamxqNXV2MG4yeDNwbGs1MmozcDZvdCJ9.AWfhzxC6hwtwrq8yFbfBOA'
     return render(request, 'frontend/view_map.html', { 'mapbox_access_token': mapbox_access_token, 'all_libraries' : libraries_json, 'locationvalues': getvalues})
 
+@login_required(login_url='/')
 @csrf_exempt
 def updateOccupancy(request):
     libraries_json = serializers.serialize('json', Location.objects.all())
@@ -88,11 +91,17 @@ def signpost(request):
     if(request.method == "POST"):
         username = request.POST.get("username")
         pwd= request.POST.get("password")
+        pwd2 = request.POST.get("re_pass")
         email = request.POST.get('email')
         if(Student.objects.filter(username=username)):
-            return render(request, 'frontend/signup.html')
+            return render(request, 'frontend/signup.html', {"message": "That user already exists!"})
         if(username == "" or pwd == "" or email == ""):
-            return render(request, "frontend/signup.html", {'messsage': "Please fill out all the information"})
+            return render(request, "frontend/signup.html", {'message': "Please fill out all the information"})
+        if not(re.match(r'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$', pwd)):
+            return render(request, "frontend/signup.html", {"message": "You must include at least 1 uppercase letter, one number, and at least 8 characters long" })
+        if (pwd != pwd2):
+            return render(request, "frontend/signup.html", {"message": "The two passwords do not match!"})
+        
         sendData = Student.objects.create_user(username, email, pwd)
         sendData.save()
         return HttpResponseRedirect('/')
@@ -141,6 +150,7 @@ def sendEmail(request):
     else:
         return render(request, 'frontend/signup.html')
 
+@login_required(login_url='/')
 def changePassword(request):
     if request.method == 'POST':
         post_text = request.POST.get('the_post')
@@ -155,6 +165,7 @@ def changePassword(request):
     else:
         return render(request, 'frontend/changepass.html')
 
+@login_required(login_url='/')
 def changepass(request):
     return render(request, 'frontend/changepass.html')
 

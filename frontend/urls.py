@@ -4,7 +4,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.check_in, name="checkin"),
-    path('check', views.logincheck),
+    path('check', views.logincheck, name="login"),
     path('view_map/', views.view_map, name='view_map'),
     path('sign_in/', views.signpost, name="sign_in"),
     path('logout', views.logout_view, name="logout"),
