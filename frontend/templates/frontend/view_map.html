@@ -36,17 +36,18 @@
                                 bottom: 0;
                                 z-index: -1;
                             }
-                            <!--.sidenav {-->
-                                <!--height: 100%;-->
-                                <!--width: 400px;-->
-                                <!--position: fixed;-->
-                                <!--z-index: 12;-->
-                                <!--top: 0;-->
-                                <!--left: 0;-->
-                                <!--background-color: #243447;-->
-                                <!--overflow-x: hidden;-->
-                                <!--padding-top: 20px;-->
-                            <!--}-->
+                            .modal_class {
+                                height: 100%;
+                                width: 400px;
+                                position: fixed;
+                                z-index: 20;
+                                top: 0;
+                                left: 0;
+                                background-color: #243447;
+                                overflow-x: hidden;
+                                padding-top: 20px;
+                                text-align: center;
+                            }
                             .modal_class a {
                                 padding: 6px 8px 6px 16px;
                                 text-decoration: none;
@@ -64,7 +65,7 @@
                                 padding: 18px;
                                 width: 100%;
                                 border: none;
-                                <!--text-align: left;-->
+                                text-align: center;
                                 outline: none;
                                 font-size: 25px;
                                 transition: 0.4s;
@@ -134,12 +135,7 @@
                           <!-- Modal content -->
                           <div class="modal-content">
                             <span class="close">&times;</span>
-                              <p id = "modalText">Javascript overwrites this</p>
 
-                              <div class="slidecontainer">
-                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                                </div>
-                           <p> <center>Capacity: <span id="demo"></span>% full </center></p>
 
 
 
@@ -296,7 +292,7 @@
         function openModal(location_title,location_name){
             modal.style.display = "block";
             //update modal text
-            document.getElementById("modalText").innerHTML = "<center>How full does " + location_title + " look to you?</center>";
+            <!--document.getElementById("modalText").innerHTML = "<center>How full does " + location_title + " look to you?</center>";-->
             showDetail( location_name);
 
             }
