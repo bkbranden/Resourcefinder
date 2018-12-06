@@ -36,25 +36,25 @@
                                 bottom: 0;
                                 z-index: -1;
                             }
-                            .sidenav {
-                                height: 100%;
-                                width: 400px;
-                                position: fixed;
-                                z-index: 12;
-                                top: 0;
-                                left: 0;
-                                background-color: #243447;
-                                overflow-x: hidden;
-                                padding-top: 20px;
-                            }
-                            .sidenav a {
+                            <!--.sidenav {-->
+                                <!--height: 100%;-->
+                                <!--width: 400px;-->
+                                <!--position: fixed;-->
+                                <!--z-index: 12;-->
+                                <!--top: 0;-->
+                                <!--left: 0;-->
+                                <!--background-color: #243447;-->
+                                <!--overflow-x: hidden;-->
+                                <!--padding-top: 20px;-->
+                            <!--}-->
+                            .modal_class a {
                                 padding: 6px 8px 6px 16px;
                                 text-decoration: none;
                                 font-size: 25px;
                                 color: #818181;
                                 display: block;
                             }
-                            .sidenav a:hover {
+                            .modal_class a:hover {
                                 color: #000000;
                             }
                             .accordion {
@@ -64,7 +64,7 @@
                                 padding: 18px;
                                 width: 100%;
                                 border: none;
-                                text-align: left;
+                                <!--text-align: left;-->
                                 outline: none;
                                 font-size: 25px;
                                 transition: 0.4s;
@@ -102,27 +102,27 @@
                                 color: #c51f5d;
                             }
                         </style>
-                        <div class="sidenav">
-                            <div class="spacing"></div>
+                        <div class="modal_class">
+                            <!--<div class="spacing"></div>-->
                             <button class="accordion" id="homepage"> Homepage</button>
-                            {% if user.is_authenticated %}
-                            <form action="{% url 'update' %}" method="POST">
-                                {% csrf_token %}
-                                <div id = "info">
-                                    <input name="location" id="location" style="visibility: hidden;"/>
-                                    <input name="myRange" id="myRange" style="visibility:hidden;"/>
-                                    <p id="out" style="visibility:hidden;"></p>
-                                </div>
-                            </form>
-                            {% else %}
-                                <form action="{% url 'update' %}" method="POST">
-                                    {% csrf_token %}
-                                    <div id = "info">
-                                        <h2> Please log in to view location details! </h2>
-                                    </div>
+                            <!--{% if user.is_authenticated %}-->
+                            <!--<form action="{% url 'update' %}" method="POST">-->
+                                <!--{% csrf_token %}-->
+                                <!--<div id = "info">-->
+                                    <!--<input name="location" id="location" style="visibility: hidden;"/>-->
+                                    <!--<input name="myRange" id="myRange" style="visibility:hidden;"/>-->
+                                    <!--<p id="out" style="visibility:hidden;"></p>-->
+                                <!--</div>-->
+                            <!--</form>-->
+                            <!--{% else %}-->
+                                <!--<form action="{% url 'update' %}" method="POST">-->
+                                    <!--{% csrf_token %}-->
+                                    <!--<div id = "info">-->
+                                        <!--<h2> Please log in to view location details! </h2>-->
+                                    <!--</div>-->
 
-                                </form>
-                            {% endif %}
+                                <!--</form>-->
+                            <!--{% endif %}-->
 
                           <!-- Trigger/Open The Modal -->
                             <!--<button id="myBtn">Open Modal</button>-->
@@ -266,7 +266,7 @@
             .setLngLat(temp)
             .setPopup(new mapboxgl.Popup({offset: 25})
             <!--.setHTML('<h3>' + marker.fields.title + '</h3>   <button id="detail_button" type = "button" onclick="showDetail(\'' + marker.fields.location_name + '\')" > See Details </button>'))-->
-            .setHTML('<h3>' + marker.fields.title + '</h3>   <button id="marker.fields.title" type = "button" onclick = "openModal(\''+ marker.fields.title + '\',\''+ marker + '\')" > See Details </button>'))
+            .setHTML('<h3>' + marker.fields.title + '</h3>   <button id="marker.fields.title" type = "button" onclick = "openModal(\''+ marker.fields.title + '\',\''+ marker.fields.location_name + '\')" > See Details </button>'))
             .addTo(map);
             });
 
@@ -293,11 +293,11 @@
             var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on the button, open the modal
-        function openModal(location_name,marker){
+        function openModal(location_title,location_name){
             modal.style.display = "block";
             //update modal text
-            document.getElementById("modalText").innerHTML = "<center>How full does " + location_name + " look to you?</center>";
-            showDetail( marker.fields.location_name )
+            document.getElementById("modalText").innerHTML = "<center>How full does " + location_title + " look to you?</center>";
+            showDetail( location_name);
 
             }
 
