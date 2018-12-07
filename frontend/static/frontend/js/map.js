@@ -181,7 +181,8 @@ function showDetail(x){
         cardele.innerHTML = "<div class='card' style='width: 18rem; display: inline-block'> \n <img class='card-img-top'  alt='Card image cap'> \n<div class='card-body'>\n<p class='card-text'>" + descr + "</p>\n</div>\n</div>"
         var test = document.getElementById("name")
         test.setAttribute('id', 'name');
-        test.innerHTML = loctitle
+
+         test.innerHTML = loctitle + " estimated capacity: " + slider2.defaultValue + "% full";
         var imgchoose = document.getElementsByClassName('card-img-top')[0]
         if(x == "Clemons" || x == "clemons"){
             imgchoose.src = "../../static/frontend/images/Clemons.jpg"
