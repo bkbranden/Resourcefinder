@@ -261,7 +261,7 @@
             .setLngLat(temp)
             .setPopup(new mapboxgl.Popup({offset: 25})
             <!--.setHTML('<h3>' + marker.fields.title + '</h3>   <button id="detail_button" type = "button" onclick="showDetail(\'' + marker.fields.location_name + '\')" > See Details </button>'))-->
-            .setHTML('<h3>' + marker.fields.title + '</h3>   <button id="marker.fields.title" type = "button" onclick = "openModal(\''+ marker.fields.title + '\',\''+ marker.fields.location_name + '\')" > See Details </button>'))
+            .setHTML('<h3>' + marker.fields.title + '</h3><h4>' + marker.fields.percent_full + '% Full </h4>   <button id="marker.fields.title" type = "button" onclick = "openModal(\''+ marker.fields.title + '\',\''+ marker.fields.location_name + '\')" > See Details </button>'))
             .addTo(map);
             });
 
