@@ -38,8 +38,11 @@ class Location(models.Model):
 	title=models.CharField(max_length=500, default='')
 	description=models.CharField(max_length=2000, default='')
 	percent_full=models.IntegerField(default=0)
+	title_name = models.CharField(max_length=300, default='')
+	rating = models.DecimalField(max_digits=3, decimal_places=1, default=0)
 
 	occupancy_list = []  # occupancy_list should contain tuples in the form of (estimated occupancy, time subitted)
+	rating_list = []
 
 	def __str__(self):
 		return self.location_name
@@ -49,6 +52,17 @@ class Location(models.Model):
 
 	def get_list(self):
 		return json.loads(self.lists)
+
+	def get_rating(self):
+		if len(self.rating_list) == 0:
+			return 0
+		rating = 0
+		for x in self.rating_list:
+			rating += x
+		return rating/len(self.rating_list)
+	
+	def add_rating(self, rate):
+		self.rating_list.append(rate)
 	# Calculates average of all votes. Returns -1 if no votes
 	def get_percentage_full(self):
 		if len(self.occupancy_list) == 0:

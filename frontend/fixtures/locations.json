@@ -8,7 +8,9 @@
             "coordinates": "-78.5054 38.0365",
             "title": "Alderman Library",
             "description": "Library",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Alderman Library",
+            "rating": 0
         }
     },
     {
@@ -20,7 +22,9 @@
             "coordinates": "-78.5059886 38.0363712",
             "title": "Clemons Library",
             "description": "Library and Robinson Media Center",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Clemons Library",
+            "rating": 0
         }
     },
     {
@@ -32,7 +36,9 @@
             "coordinates": "-78.5078 38.0330",
             "title": "Clark Library",
             "description": "Library",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Clark Library",
+            "rating": 0
         }
     },
 
@@ -45,7 +51,9 @@
             "coordinates": "-78.513510 38.032870",
             "title": "Aquatic and Fitness Center",
             "description": "Basketball, weight-room, aquatics",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Aquatic Fitness Center",
+            "rating": 0
         }
     },
 
@@ -58,7 +66,9 @@
             "coordinates": "-78.499068 38.033899",
             "title": "Roots",
             "description": "Cozy, counter-serve diner with eco-chic decor offering create-your-own vegetarian bowls.",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Roots",
+            "rating": 0
         }
     },
 
@@ -71,7 +81,9 @@
             "coordinates": "-78.500921 38.035706",
             "title": "Bodo's Bagel Bakery",
             "description": "One of a local trio of New York-style bagel shops offering counter-serve breakfast & sandwiches.",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Bodos Bagels",
+            "rating": 0
         }
     },
 
@@ -84,7 +96,9 @@
             "coordinates": "-78.506639 38.035852",
             "title": "Newcomb Dining Hall",
             "description": "Dining Hall",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Newcomb Dining Hall",
+            "rating": 0
         }
     },
 
@@ -97,7 +111,9 @@
             "coordinates": "-78.500122 38.036525",
             "title": "Grit Coffee",
             "description": "Coffee Shop",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Grit Coffee",
+            "rating": 0
         }
     },
 
@@ -110,7 +126,9 @@
             "coordinates": "-78.515063 38.034832",
             "title": "Observatory Hill Dining Room",
             "description": "Dining Hall",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "O-Hill Dining Hall",
+            "rating": 0
         }
     },
 
@@ -123,7 +141,9 @@
             "coordinates": "-78.511154 38.033538",
             "title": "Argo Tea",
             "description": "Tea and coffee shop",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Argo Tea",
+            "rating": 0
         }
     },
 
@@ -136,7 +156,9 @@
             "coordinates": "-78.500877 38.035538",
             "title": "Starbucks Coffee (Corner)",
             "description": "Coffee shop on the corner",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Starbucks",
+            "rating": 0
         }
     },
 
@@ -149,7 +171,9 @@
             "coordinates": "-78.517604 38.034939",
             "title": "Slaughter Recreation Center",
             "description": "Basketball, weight-room, rock climbing",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Slaughter Fitness Center",
+            "rating": 0
         }
     },
 
@@ -162,7 +186,9 @@
             "coordinates": "-78.507165 38.037409",
             "title": "Memorial Gymnasium",
             "description": "Basketball, boxing, weight-room",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Memorial Gym",
+            "rating": 0
         }
     },
 
@@ -175,7 +201,9 @@
             "coordinates": "-78.513022 38.051167",
             "title": "North Grounds Recreation Center",
             "description": "Basketball, aquatics, weight-room, racketball",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "North Grounds Gym",
+            "rating": 0
         }
     },
     {
@@ -187,7 +215,9 @@
             "coordinates": "-78.518842 38.02894",
             "title": "Runk Dining Hall",
             "description": "Dining hall",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Runk Dining Hall",
+            "rating": 0
         }
     },
     {
@@ -199,7 +229,9 @@
             "coordinates": "-78.504890 38.032916",
             "title": "Rising Roll",
             "description": "Eatery",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Rising Roll",
+            "rating": 0
         }
     },
     {
@@ -211,7 +243,9 @@
             "coordinates": "-78.510826 38.031619",
             "title": "Davis Commons (Rice Hall)",
             "description": "Study Area",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Davis Commons",
+            "rating": 0
         }
     },
     {
@@ -223,7 +257,9 @@
             "coordinates": "-78.509799 38.033061",
             "title": "Thorton Stacks (Thorton Hall)",
             "description": "Study Area/ Office Hours",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Thorton Stacks",
+            "rating": 0
         }
     },
     {
@@ -235,7 +271,9 @@
             "coordinates": "-78.510716 38.032083",
             "title": "Olsson Labs",
             "description": "Study Area/ Office Hours",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Link Lab",
+            "rating": 0
         }
     },
     {
@@ -247,7 +285,9 @@
             "coordinates": "-78.505130 38.031490",
             "title": "Nau Hall",
             "description": "Study Area",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Nau Hall",
+            "rating": 0
         }
     },
     {
@@ -259,7 +299,9 @@
             "coordinates": "-78.503685 38.032869",
             "title": "McIntire School of Commerce",
             "description": "Study Area/ Classrooms",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "McIntire School of Commerce",
+            "rating": 0
         }
     },
     {
@@ -271,7 +313,9 @@
             "coordinates": "-78.504482 38.033567",
             "title": "Lawn",
             "description": "Study Area/Lounge",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Lawn",
+            "rating": 0
         }
     },
     {
@@ -283,7 +327,9 @@
             "coordinates": "-78.514298 38.052497",
             "title": "Darden School of Business",
             "description": "Study Area/Classrooms",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Darden Library",
+            "rating": 0
         }
     },
     {
@@ -295,7 +341,9 @@
             "coordinates": "-78.509177 38.052906",
             "title": "University of Virginia School of Law",
             "description": "Study Area/Classrooms",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Law Library",
+            "rating": 0
         }
     },
     {
@@ -307,7 +355,9 @@
             "coordinates": "-78.501214 38.031995",
             "title": "Claude Moore Health Sciences Library",
             "description": "Study Area/Classrooms",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "Claude Moore Library",
+            "rating": 0
         }
     },
     {
@@ -319,7 +369,9 @@
             "coordinates": "-78.50066 38.03497",
             "title": "1515",
             "description": "Study Area/Arcade",
-            "percent_full": 0
+            "percent_full": 0,
+            "title_name": "1515",
+            "rating": 0
         }
     }
 

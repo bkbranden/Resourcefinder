@@ -19,8 +19,6 @@ var locname;
 var loctitle
 var descr
 function showDetail(x){ 
-        console.log(x)
-        console.log("werwe")
         geojson.forEach(function(element){
             if(element.fields.location_name == x){
                 startvalue = element.fields.percent_full
@@ -30,7 +28,6 @@ function showDetail(x){
                 
             }
         });
-        console.log(locname)
         if(doOnce == false){
         var slider = document.getElementById("myRange")
         slider.setAttribute("value", startvalue)
@@ -48,28 +45,28 @@ function showDetail(x){
         var overalldiv = document.createElement('div')
         var test = document.createElement("h1")
         test.setAttribute('id', 'name');
-        test.innerHTML = loctitle + " estimated capacity: " + slider.defaultValue + "% full"
+        test.innerHTML = loctitle
 
         var cardele = document.createElement('div')
         cardele.setAttribute('id','desc')
-        cardele.innerHTML = "<div class='card' style='width: 18rem; display: inline-block'> \n <img class='card-img-top' id='imgchoose' alt='Card image cap'> \n<div class='card-body'>\n<p class='card-text'>" + descr + "</p>\n</div>\n</div>"
+        cardele.innerHTML = "<div class='card' style='width: 18rem; display: inline-block'> \n <img class='card-img-top' id='imgchoose' alt='Card image cap'> \n<div class='card-body'>\n   </div>\n</div>"
 
 
          var capacity_text = document.createElement("h1")
         capacity_text.setAttribute('id', 'capacity_header');
-        var temp_value = "Submit a new estimate";
+        var temp_value = "Estimated Capacity: " + slider.defaultValue + "%";
         capacity_text.innerHTML = temp_value;
 
-
+        overalldiv.style.paddingBottom = "30px"; 
         overalldiv.appendChild(test)
         overalldiv.appendChild(cardele)
-
         overalldiv.appendChild(capacity_text)
-         overalldiv.appendChild(slider)
         overalldiv.appendChild(out)
 
+         overalldiv.appendChild(slider)
+
         
-        overalldiv.style = "margin-top: 4cm;";
+        // overalldiv.style = "margin-top: 4cm;";
 
         document.getElementById('info').appendChild(overalldiv)
         var imgchoose = document.getElementById('imgchoose');
@@ -170,7 +167,7 @@ function showDetail(x){
 
 
 
-
+        overalldiv.appendChild(document.createElement('BR'))
         overalldiv.appendChild(submit)
         overalldiv.appendChild(inputname)
 
@@ -178,11 +175,11 @@ function showDetail(x){
     }
     else{
         var cardele = document.getElementById('desc');
-        cardele.innerHTML = "<div class='card' style='width: 18rem; display: inline-block'> \n <img class='card-img-top'  alt='Card image cap'> \n<div class='card-body'>\n<p class='card-text'>" + descr + "</p>\n</div>\n</div>"
+        cardele.innerHTML = "<div class='card' style='width: 18rem; display: inline-block'> \n <img class='card-img-top'  alt='Card image cap'> \n<div class='card-body'>\n</div>\n</div>"
         var test = document.getElementById("name")
         test.setAttribute('id', 'name');
 
-         test.innerHTML = loctitle + " estimated capacity: " + slider2.defaultValue + "% full";
+        test.innerHTML = loctitle;
         var imgchoose = document.getElementsByClassName('card-img-top')[0]
         if(x == "Clemons" || x == "clemons"){
             imgchoose.src = "../../static/frontend/images/Clemons.jpg"
@@ -302,10 +299,11 @@ function removeDetails(){
     inputname.setAttribute('value', locname)
     inputname.setAttribute('name', 'location')
     inputname.style="visiblity:hidden;";
+    myNode.appendChild(createOutput)
 
     myNode.appendChild(inputname)
     myNode.appendChild(createSlider)
-    myNode.appendChild(createOutput)
+    
     doOnce = false
 }
 
@@ -321,3 +319,10 @@ output.innerHTML = slider2.value + "% Full";
 slider2.oninput = function() {
 output.innerHTML = this.value + "% Full";
 }
+
+$('.rating input').change(
+    function() {
+      $('#choice').val(this.value);
+    }
+  )
+

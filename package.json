@@ -34,6 +34,7 @@
     "mauerwerk": "^2.0.2",
     "prettier": "^1.15.3",
     "rangeslider.js": "^2.3.2",
+    "rateyo": "^2.3.5",
     "rc-progress": "^2.2.6",
     "react-awesome-modal": "^2.0.5",
     "react-forecast": "0.0.7",
@@ -44,6 +45,8 @@
     "react-scripts": "^2.1.1",
     "react-sparklines": "^1.7.0",
     "react-spring": "^6.1.10",
+    "react-star-rating-component": "^1.4.1",
+    "react-stars": "^2.2.5",
     "redux": "^4.0.1",
     "superagent": "^4.0.0"
   }

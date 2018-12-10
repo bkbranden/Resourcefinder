@@ -176,10 +176,10 @@ class WeatherApp extends Component {
             <div className="app-today">
                 <TodayComponent data={this.state.todayComponentData} unit={this.state.unit} />
             </div>
-            <div className="app-list-graph">
+            {/* <div className="app-list-graph">
                 <ListComponent data={this.state.listComponentData} />
                 <GraphComponent data={this.state.graphComponentData} />
-            </div>
+            </div> */}
         </React.Fragment>
 
         return (

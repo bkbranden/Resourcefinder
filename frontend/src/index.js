@@ -7,6 +7,7 @@ import request from 'superagent';
 import '../static/frontend/css/apps.css';
 import WeatherApp from './components/WeatherApp';
 
+import ReactStars from 'react-stars'
 
 const linksstyle={
     color: "#c51f5d",
@@ -40,9 +41,9 @@ class App extends React.Component {
             let pictures = jsondata.map((pic) => {
                 return(
                     <div key={pic.pk}>
-                        <h1 className="resname" style={linksstyle}>{pic.fields.location_name}</h1>
+                        <h1 className="resname" style={linksstyle}>{pic.fields.title_name}</h1>
                         <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
-                        <h1 className="resname"><a style={linksstyle} href="/view_map">View on the map!</a></h1>
+                        <ReactStars className="reactstars" edit={false} value={pic.fields.rating}/>
                      </div>
                 )
             })
@@ -80,9 +81,9 @@ class App extends React.Component {
                 let pictures = jsondata.map((pic) => {
                     return(
                         <div key={pic.pk}>
-                            <h1 className="resname" style={linksstyle}>{pic.fields.location_name}</h1>
+                            <h1 className="resname" style={linksstyle}>{pic.fields.title_name}</h1>
                         <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
-                        <h1 className="resname"><a style={linksstyle} href="/view_map">View on the map!</a></h1>
+                        <ReactStars className="reactstars" edit={false} value={pic.fields.rating}/>
                         </div>
                     )
                 })
@@ -100,9 +101,9 @@ class App extends React.Component {
                 let pictures = jsondata.map((pic) => {
                     return(
                         <div key={pic.pk}>
-                            <h1 className="resname" style={linksstyle}>{pic.fields.location_name}</h1>
+                            <h1 className="resname" style={linksstyle}>{pic.fields.title_name}</h1>
                             <img src={`../../static/frontend/images/${pic.fields.location_name}.jpg`} />
-                            <h1 className="resname"><a style={linksstyle} href="/view_map">View on the map!</a></h1>
+                            <ReactStars className="reactstars" edit={false} value={pic.fields.rating}/>
                         </div>
                     )
                 })

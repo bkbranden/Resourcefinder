@@ -6,11 +6,13 @@
 
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
        
+
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
             <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
             <link href='../../static/frontend/css/rangeslider.css' rel='stylesheet' />
+            <link href='../../static/frontend/css/starability.css' rel='stylesheet' />
             <style>
             body { margin:0; padding:0; }
             #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -105,6 +107,7 @@
                         <div class="modal_class">
                             <!--<div class="spacing"></div>-->
                             <button class="accordion" id="homepage"> Homepage</button>
+
                             <!--{% if user.is_authenticated %}-->
                             <!--<form action="{% url 'update' %}" method="POST">-->
                                 <!--{% csrf_token %}-->
@@ -129,10 +132,11 @@
 
 
                         <!-- The Modal -->
-                        <div id="myModal" class="modal">
 
+                        <div id="myModal" class="modal">
+                            <div  class="slide-in-top">
                           <!-- Modal content -->
-                          <div class="modal-content">
+                          <div class="modal-content" style="background-color: #243447">
                             <span class="close">&times;</span>
 
 
@@ -141,13 +145,31 @@
                             <form action="{% url 'update' %}" method="POST">
                                 {% csrf_token %}
                                 <div id = "info">
+                                        <p id="out" style="visibility:hidden;"></p>
+
                                     <input name="location" id="location" style="visibility: hidden;"/>
                                     <input name="myRange" id="myRange" style="visibility:hidden;"/>
-                                    <p id="out" style="visibility:hidden;"></p>
                                 </div>
+                                <fieldset class="rating">
+                                  <input type="radio" id="star5" name="rating" value="5" />
+                                  <label for="star5">5 stars</label>
+                                  <input type="radio" id="star4" name="rating" value="4" />
+                                  <label for="star4">4 stars</label>
+                                  <input type="radio" id="star3" name="rating" value="3" />
+                                  <label for="star3">3 stars</label>
+                                  <input type="radio" id="star2" name="rating" value="2" />
+                                  <label for="star2">2 stars</label>
+                                  <input type="radio" id="star1" name="rating" value="1" />
+                                  <label for="star1">1 star</label>
+                                </fieldset>
+                                
+                                <input id="choice" name="ratingstars" value=0 style="visibility: hidden;"/>
+                                
                             </form>
                            <div id="modalSubmitDiv" >  </div>
+                           
                           </div>
+                        </div>
 
                         </div>
 
@@ -303,18 +325,23 @@
 
             // When the user clicks on <span> (x), close the modal
             span.onclick = function() {
+                
                 modal.style.display = "none";
-            }
+                $('#choice').val(0);
+                }
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
-                }
+                    $('#choice').val(0);
+                    }
             }
             </script>
            
             </body>
             <script src="../../static/frontend/js/map.js"></script>
+            <script src="../../static/frontend/vendor/jquery/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script> 
             
             </html>

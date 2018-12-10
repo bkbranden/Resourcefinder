@@ -16,13 +16,14 @@ const ImageModal = (props) => {
                     effect="fadeInUp"
                     onClickAway={() => props.onRequestClose()}
                 >
-                    <div className="modalwrapper">
-                        {props.selected}
-                        <h2>{props.info.fields.description}</h2>
-                        <h3>{props.info.fields.percent_full}% Occupancy</h3>
-                        <Line percent={props.info.fields.percent_full} strokeWidth="3" strokeColor="#c51f5d"/>
-                        <button onClick={() => props.onRequestClose()}>Close</button>
-                    </div>
+                    
+                        <div className="modalwrapper">
+                            {props.selected}
+                            <h2>{props.info.fields.description}</h2>
+                            <h3>{props.info.fields.percent_full}% Occupancy</h3>
+                            <Line percent={props.info.fields.percent_full} strokeWidth="3" strokeColor="#c51f5d"/>
+                            <button onClick={() => props.onRequestClose()}>Close</button>
+                        </div>
                 </Modal>
                 
             

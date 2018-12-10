@@ -17,9 +17,13 @@
             <section class="sign-in">
                 <div class="container">
                     <div class="signin-content">
+                            
                         <div class="signin-image">
                             <figure><img src="../../static/frontend/imagesforlogin/signin-image.jpg" alt="sing up image"></figure>
                         </div>
+                        {% if message %}
+                            <p style="font-size: 26px; text-align: center; padding-top: 10px;">Error：<span style="color: red">{{ message }}</span></p>
+                        {% endif %}
     
                         <div class="signin-form">
                             <h2 class="form-title">Sign in</h2>

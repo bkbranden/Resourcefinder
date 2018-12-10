@@ -53,7 +53,7 @@ def logincheck(request):
             login(request, user)
             return render(request, 'frontend/index.html')
         else:
-            return HttpResponseRedirect('/')
+            return render(request, 'frontend/check_in.html', {'message': "Invalid Username or Password"})
     else:
         return render(request, 'frontend/index.html')
 
@@ -73,9 +73,13 @@ def updateOccupancy(request):
     if(request.method == "POST"):
         occupancyvalue = request.POST.get('myRange')
         locationname = request.POST.get('location')
+        rating = request.POST.get('ratingstars')
         locationupdate = Location.objects.get(location_name =locationname)
         locationupdate.check_in(int(occupancyvalue))
+        locationupdate.add_rating(int(rating))
+        updatedrating = locationupdate.get_rating()
         updatedValue = int(locationupdate.get_percentage_full())
+        locationupdate.rating = updatedrating
         locationupdate.percent_full = updatedValue
         locationupdate.save()
         libraries_json = serializers.serialize('json', Location.objects.all())
@@ -171,7 +175,7 @@ def changepass(request):
 
 @csrf_exempt
 def listresource(request, search):
-    resources_json = serializers.serialize('json', Location.objects.filter(location_name__startswith = search))
+    resources_json = serializers.serialize('json', Location.objects.filter(title_name__startswith = search))
     return JsonResponse(resources_json, safe=False)
 
 @csrf_exempt
