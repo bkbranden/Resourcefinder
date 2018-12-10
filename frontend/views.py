@@ -175,7 +175,7 @@ def changepass(request):
 
 @csrf_exempt
 def listresource(request, search):
-    resources_json = serializers.serialize('json', Location.objects.filter(title_name__startswith = search))
+    resources_json = serializers.serialize('json', Location.objects.filter(location_name__startswith = search))
     return JsonResponse(resources_json, safe=False)
 
 @csrf_exempt
