@@ -22,6 +22,7 @@ const ImageModal = (props) => {
                             <h2>{props.info.fields.description}</h2>
                             <h3>{props.info.fields.percent_full}% Occupancy</h3>
                             <Line percent={props.info.fields.percent_full} strokeWidth="3" strokeColor="#c51f5d"/>
+                            <p ><a className="resname" href="/view_map">View on the Map!</a></p>
                             <button onClick={() => props.onRequestClose()}>Close</button>
                         </div>
                 </Modal>
